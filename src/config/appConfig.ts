@@ -2,8 +2,9 @@ import type { AppTab } from "../types";
 
 export const appConfig = {
   appName: "SEASON",
+mobileHeaderLabel: "SEASON",
   teamName: "충북청주FC",
-  headerLabel: "충북청주 FC",
+  headerLabel: "SEASON",
   appSubtitle: "시즌별 기록 아카이브",
   logoText: "CHFC",
   logoUrl: "https://www.chfc.kr/images/match/view_K37.png",
