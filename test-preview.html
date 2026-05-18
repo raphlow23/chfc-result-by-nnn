@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07111F" />
+    <title>DEEPBLUE ARCHIVE</title>
+    <style>
+      :root {
+        --bg: #07111f;
+        --card: #0e1a2b;
+        --blue: #102a5c;
+        --red: #e0182d;
+        --text: #f5f7fa;
+        --sub: #9ca3af;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--text);
+        background: var(--bg);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at top left, rgba(16, 42, 92, 0.48), transparent 28rem),
+          var(--bg);
+      }
+
+      button,
+      select {
+        font: inherit;
+      }
+
+      button {
+        border: 0;
+        cursor: pointer;
+      }
+
+      .app {
+        max-width: 760px;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding-bottom: 86px;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(7, 17, 31, 0.94);
+        backdrop-filter: blur(12px);
+      }
+
+      .eyebrow {
+        margin: 0 0 4px;
+        color: var(--red);
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 20px;
+        line-height: 1.1;
+      }
+
+      select {
+        height: 44px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 8px;
+        color: var(--text);
+        background: var(--blue);
+        padding: 0 12px;
+        font-weight: 800;
+      }
+
+      main {
+        padding: 16px;
+      }
+
+      .section-title {
+        margin-bottom: 12px;
+      }
+
+      .section-title h2 {
+        font-size: 19px;
+      }
+
+      .section-title p {
+        margin-top: 5px;
+        color: var(--sub);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .card {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        background: var(--card);
+        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+      }
+
+      .hero {
+        padding: 20px;
+      }
+
+      .hero h2 {
+        margin-top: 8px;
+        font-size: 24px;
+      }
+
+      .hero p {
+        margin-top: 8px;
+        color: var(--sub);
+        line-height: 1.6;
+      }
+
+      .grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .grid.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid.four {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .stat {
+        padding: 14px;
+      }
+
+      .stat span,
+      .muted {
+        color: var(--sub);
+        font-size: 13px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 24px;
+      }
+
+      .stack {
+        display: grid;
+        gap: 12px;
+      }
+
+      .match-card,
+      .player-card,
+      .history-card {
+        width: 100%;
+        padding: 16px;
+        color: inherit;
+        text-align: left;
+      }
+
+      .match-meta,
+      .row,
+      .modal-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .match-meta {
+        color: var(--sub);
+        font-size: 12px;
+      }
+
+      .badge {
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 5px 9px;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .badge.red {
+        color: #ffe8eb;
+        background: rgba(224, 24, 45, 0.25);
+      }
+
+      .scoreboard {
+        display: grid;
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .teamline {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: 17px;
+        font-weight: 900;
+      }
+
+      .detail {
+        margin-top: 12px;
+        color: var(--sub);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .filters {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        margin-bottom: 14px;
+      }
+
+      .chip {
+        flex: 0 0 auto;
+        border-radius: 999px;
+        background: var(--card);
+        color: var(--sub);
+        padding: 10px 13px;
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .chip.active {
+        color: white;
+        background: var(--red);
+      }
+
+      .player-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .number {
+        color: var(--red);
+        font-size: 12px;
+        font-weight: 950;
+      }
+
+      .position {
+        border-radius: 8px;
+        background: var(--blue);
+        padding: 8px 10px;
+        font-weight: 950;
+      }
+
+      .mini-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .mini-stats div {
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 9px;
+        text-align: center;
+      }
+
+      .mini-stats span {
+        display: block;
+        color: var(--sub);
+        font-size: 12px;
+      }
+
+      .mini-stats strong {
+        display: block;
+        margin-top: 3px;
+      }
+
+      .flow {
+        display: flex;
+        gap: 8px;
+      }
+
+      .flow span {
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: var(--blue);
+        font-weight: 950;
+      }
+
+      .shortcut {
+        border-radius: 8px;
+        background: var(--blue);
+        color: var(--text);
+        padding: 16px;
+        text-align: left;
+        font-weight: 950;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 14px;
+        border-left: 1px solid rgba(255, 255, 255, 0.12);
+        margin-left: 7px;
+        padding-left: 16px;
+      }
+
+      .history-card {
+        position: relative;
+      }
+
+      .history-card::before {
+        content: "";
+        position: absolute;
+        left: -24px;
+        top: 18px;
+        width: 12px;
+        height: 12px;
+        border-radius: 999px;
+        background: var(--red);
+      }
+
+      .bottom-nav {
+        position: fixed;
+        inset: auto 0 0;
+        z-index: 10;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(7, 17, 31, 0.96);
+        backdrop-filter: blur(12px);
+      }
+
+      .bottom-nav-inner {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 8px;
+      }
+
+      .nav-button {
+        border-radius: 8px;
+        background: transparent;
+        color: var(--sub);
+        padding: 12px 4px;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .nav-button.active {
+        color: white;
+        background: var(--red);
+      }
+
+      .modal {
+        position: fixed;
+        inset: 0;
+        z-index: 30;
+        background: rgba(0, 0, 0, 0.72);
+        padding: 16px;
+      }
+
+      .modal-box {
+        max-width: 680px;
+        max-height: 88vh;
+        overflow-y: auto;
+        margin: 0 auto;
+        padding: 18px;
+      }
+
+      .close {
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        padding: 9px 12px;
+        font-weight: 900;
+      }
+
+      .block {
+        margin-top: 12px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 14px;
+      }
+
+      .block p {
+        margin-top: 8px;
+        color: var(--sub);
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      @media (min-width: 640px) {
+        .grid.four {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .stack.players {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      const data = {
+        seasons: [
+          { id: "2026", label: "2026 시즌", teamName: "충북청주FC", division: "K리그2" },
+          { id: "2025", label: "2025 시즌", teamName: "충북청주FC", division: "K리그2" },
+          { id: "2024", label: "2024 시즌", teamName: "충북청주FC", division: "K리그2" },
+          { id: "2023", label: "2023 시즌", teamName: "충북청주FC", division: "K리그2" }
+        ],
+        standings: [
+          { seasonId: "2026", rank: "9위", wins: 3, draws: 5, losses: 4, goalsFor: 12, goalsAgainst: 18, points: 14, homeRecord: "2승 3무 1패", awayRecord: "1승 2무 3패", longestWinningRun: "2연승", longestWinlessRun: "5경기", highestScoringMatch: "FA컵 3R 충북청주 2-1 김포" }
+        ],
+        matches: [
+          { id: "m1", seasonId: "2026", date: "2026-05-13", time: "19:30", competition: "K리그2", competitionType: "league", round: "12R", homeTeam: "충북청주 FC", awayTeam: "부천 FC", homeScore: 1, awayScore: 1, stadium: "청주종합운동장", status: "finished", scorers: ["김○○ 67'"], assists: ["박○○"], yellowCards: ["이○○"], redCards: [], startingLineup: ["박대한", "김민준", "최석현", "윤성우", "김선민", "허승찬", "김도현", "가르시아"], substitutes: ["조성빈", "강의빈", "문상윤"], stats: { shots: 9, possession: 48, corners: 4 }, articleLinks: ["경기 리뷰 기록"], memo: "후반 동점골 이후 수비 집중력이 돋보였던 경기." },
+          { id: "m2", seasonId: "2026", date: "2026-05-18", time: "19:00", competition: "K리그2", competitionType: "league", round: "13R", homeTeam: "충북청주 FC", awayTeam: "안산 그리너스", homeScore: null, awayScore: null, stadium: "청주종합운동장", status: "scheduled", scorers: [], assists: [], yellowCards: [], redCards: [], startingLineup: [], substitutes: [], stats: {}, articleLinks: [], memo: "홈 연전 분위기 전환이 필요한 경기." },
+          { id: "m3", seasonId: "2026", date: "2026-05-06", time: "16:30", competition: "K리그2", competitionType: "league", round: "11R", homeTeam: "서울 이랜드", awayTeam: "충북청주 FC", homeScore: 2, awayScore: 0, stadium: "목동종합운동장", status: "finished", scorers: [], assists: [], yellowCards: ["김선민"], redCards: [], startingLineup: ["박대한", "윤성우", "최석현", "김민준", "김선민", "허승찬", "가르시아"], substitutes: ["조성빈", "박재형"], stats: { shots: 7, possession: 45, corners: 3 }, articleLinks: [], memo: "전환 수비와 세컨드볼 싸움에서 밀린 경기." },
+          { id: "m4", seasonId: "2026", date: "2026-04-17", time: "19:00", competition: "FA컵", competitionType: "fa", round: "3R", homeTeam: "충북청주 FC", awayTeam: "김포 FC", homeScore: 2, awayScore: 1, stadium: "청주종합운동장", status: "finished", scorers: ["가르시아 22'", "김선민 74'"], assists: ["허승찬", "문상윤"], yellowCards: ["윤성우"], redCards: [], startingLineup: ["박대한", "윤성우", "최석현", "김민준", "김선민", "문상윤", "허승찬", "가르시아"], substitutes: ["노동건", "조성빈"], stats: { shots: 12, possession: 51, corners: 5 }, articleLinks: [], memo: "컵 대회 분위기를 만든 홈 승리." }
+        ],
+        players: [
+          { id: "p1", seasonId: "2026", number: "1", name: "노동건", position: "GK", nationality: "대한민국", birthDate: "1991-10-04", height: "191cm", weight: "88kg", joinedYear: "2026", appearances: 10, goals: 0, assists: 0, cleanSheets: 3, yellowCards: 1, redCards: 0, seasonRecords: [{ season: "2026", appearances: 10, goals: 0, assists: 0 }], previousClubs: ["샘플 이전 구단"], nextClubs: [] },
+          { id: "p2", seasonId: "2026", number: "4", name: "윤성우", position: "DF", nationality: "대한민국", birthDate: "1998-03-11", height: "184cm", weight: "78kg", joinedYear: "2025", appearances: 12, goals: 1, assists: 0, cleanSheets: 0, yellowCards: 3, redCards: 0, seasonRecords: [{ season: "2026", appearances: 12, goals: 1, assists: 0 }], previousClubs: [], nextClubs: [] },
+          { id: "p3", seasonId: "2026", number: "5", name: "김선민", position: "MF", nationality: "대한민국", birthDate: "1991-12-12", height: "167cm", weight: "65kg", joinedYear: "2024", appearances: 12, goals: 2, assists: 2, cleanSheets: 0, yellowCards: 4, redCards: 0, seasonRecords: [{ season: "2026", appearances: 12, goals: 2, assists: 2 }], previousClubs: ["샘플 이전 구단"], nextClubs: [] },
+          { id: "p4", seasonId: "2026", number: "10", name: "핀리 웰치", position: "MF", nationality: "영국", birthDate: "2002-05-20", height: "178cm", weight: "72kg", joinedYear: "2026", appearances: 11, goals: 1, assists: 3, cleanSheets: 0, yellowCards: 2, redCards: 0, seasonRecords: [{ season: "2026", appearances: 11, goals: 1, assists: 3 }], previousClubs: [], nextClubs: [] },
+          { id: "p5", seasonId: "2026", number: "11", name: "가르시아", position: "FW", nationality: "콜롬비아", birthDate: "1998-10-28", height: "180cm", weight: "76kg", joinedYear: "2026", appearances: 12, goals: 3, assists: 1, cleanSheets: 0, yellowCards: 1, redCards: 0, seasonRecords: [{ season: "2026", appearances: 12, goals: 3, assists: 1 }], previousClubs: ["샘플 이전 구단"], nextClubs: [] }
+        ],
+        coaches: [
+          { id: "c1", seasonId: "2026", name: "권오규", role: "감독", period: "2026" },
+          { id: "c2", seasonId: "2026", name: "코칭스태프", role: "STAFF", period: "2026" }
+        ],
+        historyEvents: [
+          { id: "h1", seasonId: "2026", date: "2026-02", title: "새 시즌 아카이브 시작", category: "시즌 준비", description: "선수단 개편과 함께 시즌 기록을 정리하기 시작한 시점." },
+          { id: "h2", seasonId: "2026", date: "2026-04", title: "컵 대회 홈 승리", category: "주요 경기", description: "FA컵 홈 경기 승리로 분위기 반전의 계기를 마련." },
+          { id: "h3", seasonId: "2026", date: "2026-05", title: "장기 무승 흐름 점검", category: "시즌 평가", description: "무승 구간의 경기 흐름과 서포터 반응을 기록할 필요가 있는 시기." }
+        ]
+      };
+
+      const state = {
+        season: "2026",
+        tab: "home",
+        competition: "all",
+        status: "all",
+        position: "ALL",
+        recordTab: "team",
+        modal: null
+      };
+
+      function seasonMatches() {
+        return data.matches.filter((match) => match.seasonId === state.season).sort((a, b) => a.date.localeCompare(b.date));
+      }
+
+      function seasonPlayers() {
+        return data.players.filter((player) => player.seasonId === state.season);
+      }
+
+      function standing() {
+        return data.standings.find((item) => item.seasonId === state.season);
+      }
+
+      function resultFlow() {
+        return seasonMatches().filter((match) => match.status === "finished").slice(-5).map((match) => {
+          const isHome = match.homeTeam.includes("충북청주");
+          const gf = isHome ? match.homeScore : match.awayScore;
+          const ga = isHome ? match.awayScore : match.homeScore;
+          if (gf > ga) return "승";
+          if (gf === ga) return "무";
+          return "패";
+        });
+      }
+
+      function h(value) {
+        return String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
+      }
+
+      function stat(label, value, hint = "") {
+        return `<div class="card stat"><span>${h(label)}</span><strong>${h(value)}</strong>${hint ? `<p class="muted">${h(hint)}</p>` : ""}</div>`;
+      }
+
+      function topbar() {
+        return `
+          <header class="topbar">
+            <div>
+              <p class="eyebrow">Chungbuk Cheongju FC</p>
+              <h1>DEEPBLUE ARCHIVE</h1>
+            </div>
+            <select onchange="setSeason(this.value)">
+              ${data.seasons.map((season) => `<option value="${season.id}" ${state.season === season.id ? "selected" : ""}>${season.label}</option>`).join("")}
+            </select>
+          </header>
+        `;
+      }
+
+      function homeView() {
+        const matches = seasonMatches();
+        const players = seasonPlayers();
+        const recent = [...matches].reverse().find((match) => match.status === "finished");
+        const next = matches.find((match) => match.status === "scheduled");
+        const st = standing();
+        const scorers = [...players].sort((a, b) => b.goals - a.goals).slice(0, 3);
+        const assists = [...players].sort((a, b) => b.assists - a.assists).slice(0, 3);
+
+        return `
+          <div class="stack">
+            <section class="card hero">
+              <p class="eyebrow">DEEPBLUE ARCHIVE</p>
+              <h2>${state.season} 시즌 충북청주FC</h2>
+              <p>경기, 선수단, 기록, 히스토리를 시즌 단위로 정리하는 데이터 중심 팬 아카이브입니다.</p>
+            </section>
+            <div class="grid two">
+              <section class="card stat">
+                <span>최근 경기</span>
+                <strong>${recent ? `${recent.homeTeam} ${recent.homeScore} : ${recent.awayScore} ${recent.awayTeam}` : "-"}</strong>
+                <p class="muted">${recent ? `${recent.date} · ${recent.stadium}` : ""}</p>
+              </section>
+              <section class="card stat">
+                <span>다음 경기</span>
+                <strong>${next ? `vs ${next.awayTeam.includes("충북청주") ? next.homeTeam : next.awayTeam}` : "-"}</strong>
+                <p class="muted">${next ? `${next.date} ${next.time} · ${next.stadium}` : ""}</p>
+              </section>
+            </div>
+            <div class="grid four">
+              ${stat("순위", st?.rank || "-")}
+              ${stat("승점", st?.points ?? "-")}
+              ${stat("득점", st?.goalsFor ?? "-")}
+              ${stat("실점", st?.goalsAgainst ?? "-")}
+            </div>
+            <section class="card stat">
+              <span>최근 5경기</span>
+              <div class="flow" style="margin-top:12px">${resultFlow().map((item) => `<span>${item}</span>`).join("") || `<p class="muted">표시할 흐름이 없습니다.</p>`}</div>
+            </section>
+            <section class="card stat">
+              <span>주요 선수 기록</span>
+              <div class="grid two" style="margin-top:12px">
+                <div>${scorers.map((p, i) => `<div class="row"><span class="muted">${i + 1}. ${h(p.name)}</span><strong>${p.goals}</strong></div>`).join("")}</div>
+                <div>${assists.map((p, i) => `<div class="row"><span class="muted">${i + 1}. ${h(p.name)}</span><strong>${p.assists}</strong></div>`).join("")}</div>
+              </div>
+            </section>
+            <div class="grid two">
+              ${["경기 일정:matches", "선수단:squad", "기록:records", "히스토리:history"].map((raw) => {
+                const [label, tab] = raw.split(":");
+                return `<button class="shortcut" onclick="setTab('${tab}')">${label}</button>`;
+              }).join("")}
+            </div>
+          </div>
+        `;
+      }
+
+      function chip(label, value, group) {
+        const active = state[group] === value;
+        return `<button class="chip ${active ? "active" : ""}" onclick="setFilter('${group}','${value}')">${label}</button>`;
+      }
+
+      function matchesView() {
+        const matches = seasonMatches().filter((match) => {
+          const competitionOk = state.competition === "all" || match.competitionType === state.competition;
+          const statusOk = state.status === "all" || match.status === state.status;
+          return competitionOk && statusOk;
+        });
+
+        return `
+          <section class="section-title"><h2>경기</h2><p>경기 카드를 누르면 상세 기록을 확인할 수 있습니다.</p></section>
+          <div class="filters">
+            ${chip("전체", "all", "competition")}
+            ${chip("리그", "league", "competition")}
+            ${chip("FA컵", "fa", "competition")}
+            ${chip("친선", "friendly", "competition")}
+          </div>
+          <div class="filters">
+            ${chip("전체", "all", "status")}
+            ${chip("예정", "scheduled", "status")}
+            ${chip("종료", "finished", "status")}
+          </div>
+          <div class="stack">
+            ${matches.map(matchCard).join("") || `<p class="card stat muted">등록된 경기 데이터가 없습니다.</p>`}
+          </div>
+        `;
+      }
+
+      function matchCard(match) {
+        const finished = match.status === "finished";
+        return `
+          <button class="card match-card" onclick="openModal('match','${match.id}')">
+            <div class="match-meta">
+              <span>${match.date.replaceAll("-", ".")} ${match.competition} ${match.round}</span>
+              <span class="badge ${finished ? "" : "red"}">${finished ? "종료" : "예정"}</span>
+            </div>
+            <div class="scoreboard">
+              <div class="teamline"><span>${h(match.homeTeam)}</span><span>${match.homeScore ?? "-"}</span></div>
+              <div class="teamline"><span>${h(match.awayTeam)}</span><span>${match.awayScore ?? "-"}</span></div>
+            </div>
+            <p class="detail">장소: ${h(match.stadium)}<br />득점: ${match.scorers.length ? match.scorers.map(h).join(", ") : "-"}</p>
+          </button>
+        `;
+      }
+
+      function squadView() {
+        const players = seasonPlayers().filter((player) => state.position === "ALL" || player.position === state.position);
+        const staff = data.coaches.filter((coach) => coach.seasonId === state.season);
+        return `
+          <section class="section-title"><h2>선수단</h2><p>선수 카드를 누르면 상세 기록을 확인할 수 있습니다.</p></section>
+          <div class="filters">
+            ${["ALL", "GK", "DF", "MF", "FW", "STAFF"].map((pos) => chip(pos === "ALL" ? "전체" : pos, pos, "position")).join("")}
+          </div>
+          <div class="stack players">
+            ${state.position === "STAFF"
+              ? staff.map((coach) => `<article class="card player-card"><p class="muted">${h(coach.role)}</p><h3>${h(coach.name)}</h3><p class="detail">${h(coach.period)}</p></article>`).join("")
+              : players.map(playerCard).join("") || `<p class="card stat muted">등록된 선수 데이터가 없습니다.</p>`}
+          </div>
+        `;
+      }
+
+      function playerCard(player) {
+        return `
+          <button class="card player-card" onclick="openModal('player','${player.id}')">
+            <div class="player-top">
+              <div>
+                <span class="number">NO. ${h(player.number)}</span>
+                <h3>${h(player.name)}</h3>
+                <p class="muted">${h(player.position)} · ${h(player.nationality)}</p>
+              </div>
+              <span class="position">${h(player.position)}</span>
+            </div>
+            <div class="mini-stats">
+              <div><span>출전</span><strong>${player.appearances}</strong></div>
+              <div><span>득점</span><strong>${player.goals}</strong></div>
+              <div><span>도움</span><strong>${player.assists}</strong></div>
+            </div>
+          </button>
+        `;
+      }
+
+      function recordsView() {
+        const st = standing();
+        const players = seasonPlayers();
+        return `
+          <section class="section-title"><h2>기록</h2><p>팀 기록, 선수 기록, 역대 기록을 카드와 리스트로 정리합니다.</p></section>
+          <div class="filters">
+            ${chip("팀 기록", "team", "recordTab")}
+            ${chip("선수 기록", "player", "recordTab")}
+            ${chip("역대 기록", "alltime", "recordTab")}
+          </div>
+          ${state.recordTab === "team" ? `
+            <div class="grid two">
+              ${stat("승/무/패", `${st?.wins ?? 0}/${st?.draws ?? 0}/${st?.losses ?? 0}`)}
+              ${stat("승점", st?.points ?? "-")}
+              ${stat("홈 성적", st?.homeRecord || "-")}
+              ${stat("원정 성적", st?.awayRecord || "-")}
+            </div>
+            <section class="card stat" style="margin-top:12px">
+              <div class="row"><span class="muted">최다 연승</span><strong>${h(st?.longestWinningRun || "-")}</strong></div>
+              <div class="row"><span class="muted">최다 무승</span><strong>${h(st?.longestWinlessRun || "-")}</strong></div>
+              <div class="row"><span class="muted">최다 득점 경기</span><strong>${h(st?.highestScoringMatch || "-")}</strong></div>
+            </section>
+          ` : ""}
+          ${state.recordTab === "player" ? recordLists(players) : ""}
+          ${state.recordTab === "alltime" ? `
+            ${recordList("역대 최다 출전", [...players].sort((a,b)=>b.appearances-a.appearances), "appearances")}
+            ${recordList("역대 최다 득점", [...players].sort((a,b)=>b.goals-a.goals), "goals")}
+            <section class="card stat" style="margin-top:12px"><strong>역대 주장 / 감독 / 순위 변화</strong><p class="detail">1차 프로토타입에서는 데이터 구조만 열어두고, 실제 시즌별 누적 데이터 입력 후 확장합니다.</p></section>
+          ` : ""}
+        `;
+      }
+
+      function recordLists(players) {
+        return `
+          <div class="grid two">
+            ${recordList("시즌 득점 순위", [...players].sort((a,b)=>b.goals-a.goals), "goals")}
+            ${recordList("시즌 도움 순위", [...players].sort((a,b)=>b.assists-a.assists), "assists")}
+            ${recordList("출전 경기 수", [...players].sort((a,b)=>b.appearances-a.appearances), "appearances")}
+            ${recordList("경고", [...players].sort((a,b)=>(b.yellowCards||0)-(a.yellowCards||0)), "yellowCards")}
+          </div>
+        `;
+      }
+
+      function recordList(title, players, key) {
+        return `
+          <section class="card stat">
+            <strong>${h(title)}</strong>
+            ${players.slice(0, 5).map((player, index) => `<div class="row"><span class="muted">${index + 1}. ${h(player.name)}</span><strong>${player[key] ?? 0}</strong></div>`).join("")}
+          </section>
+        `;
+      }
+
+      function historyView() {
+        const events = data.historyEvents.filter((event) => event.seasonId === state.season);
+        return `
+          <section class="section-title"><h2>히스토리</h2><p>팬 아카이브 성격의 시즌별 주요 사건 타임라인입니다.</p></section>
+          <div class="timeline">
+            ${events.map((event) => `
+              <article class="card history-card">
+                <div class="row"><span class="muted">${h(event.date)}</span><span class="badge">${h(event.category)}</span></div>
+                <h3 style="margin-top:8px">${h(event.title)}</h3>
+                <p class="detail">${h(event.description)}</p>
+              </article>
+            `).join("") || `<p class="card stat muted">등록된 히스토리 데이터가 없습니다.</p>`}
+          </div>
+        `;
+      }
+
+      function modalView() {
+        if (!state.modal) return "";
+        if (state.modal.type === "match") {
+          const match = data.matches.find((item) => item.id === state.modal.id);
+          if (!match) return "";
+          return `
+            <div class="modal">
+              <div class="card modal-box">
+                <div class="modal-head"><div><p class="muted">${match.date} · ${match.competition} ${match.round}</p><h2>${h(match.homeTeam)} ${match.homeScore ?? "-"} : ${match.awayScore ?? "-"} ${h(match.awayTeam)}</h2></div><button class="close" onclick="closeModal()">닫기</button></div>
+                ${block("선발 라인업", match.startingLineup)}
+                ${block("교체 명단", match.substitutes)}
+                ${block("득점자", match.scorers)}
+                ${block("도움", match.assists)}
+                ${block("경고/퇴장", [...match.yellowCards.map((i) => `경고 ${i}`), ...match.redCards.map((i) => `퇴장 ${i}`)])}
+                ${block("경기 기록", [`슈팅 ${match.stats.shots ?? "-"}`, `점유율 ${match.stats.possession ?? "-"}%`, `코너킥 ${match.stats.corners ?? "-"}`])}
+                ${block("관련 기사 링크", match.articleLinks)}
+                <section class="block"><strong>간단 메모</strong><p>${h(match.memo || "-")}</p></section>
+              </div>
+            </div>
+          `;
+        }
+        const player = data.players.find((item) => item.id === state.modal.id);
+        if (!player) return "";
+        return `
+          <div class="modal">
+            <div class="card modal-box">
+              <div class="modal-head"><div><p class="number">NO. ${h(player.number)}</p><h2>${h(player.name)}</h2><p class="muted">${h(player.position)} · ${h(player.nationality)}</p></div><button class="close" onclick="closeModal()">닫기</button></div>
+              <div class="grid two" style="margin-top:14px">${stat("출전", player.appearances)}${stat("득점", player.goals)}${stat("도움", player.assists)}${stat("클린시트", player.cleanSheets ?? 0)}</div>
+              ${block("프로필", [`생년월일: ${player.birthDate || "-"}`, `신장/체중: ${[player.height, player.weight].filter(Boolean).join(" / ") || "-"}`, `입단연도: ${player.joinedYear || "-"}`, `이전 소속: ${player.previousClubs.join(", ") || "-"}`])}
+              ${block("시즌별 출전 기록", player.seasonRecords.map((record) => `${record.season}: 출전 ${record.appearances} · 득점 ${record.goals} · 도움 ${record.assists}`))}
+            </div>
+          </div>
+        `;
+      }
+
+      function block(title, items) {
+        return `<section class="block"><strong>${h(title)}</strong><p>${items.length ? items.map(h).join(", ") : "-"}</p></section>`;
+      }
+
+      function bottomNav() {
+        const tabs = [["home", "홈"], ["matches", "경기"], ["squad", "선수단"], ["records", "기록"], ["history", "히스토리"]];
+        return `<nav class="bottom-nav"><div class="bottom-nav-inner">${tabs.map(([id, label]) => `<button class="nav-button ${state.tab === id ? "active" : ""}" onclick="setTab('${id}')">${label}</button>`).join("")}</div></nav>`;
+      }
+
+      function render() {
+        const body = state.tab === "home" ? homeView() : state.tab === "matches" ? matchesView() : state.tab === "squad" ? squadView() : state.tab === "records" ? recordsView() : historyView();
+        document.getElementById("app").innerHTML = `<div class="app">${topbar()}<main>${body}</main>${bottomNav()}${modalView()}</div>`;
+      }
+
+      function setSeason(value) {
+        state.season = value;
+        state.modal = null;
+        render();
+      }
+
+      function setTab(value) {
+        state.tab = value;
+        state.modal = null;
+        render();
+      }
+
+      function setFilter(group, value) {
+        state[group] = value;
+        render();
+      }
+
+      function openModal(type, id) {
+        state.modal = { type, id };
+        render();
+      }
+
+      function closeModal() {
+        state.modal = null;
+        render();
+      }
+
+      render();
+    </script>
+  </body>
+</html>
