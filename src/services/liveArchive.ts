@@ -217,7 +217,7 @@ function getCompetitionType(name = ""): Match["competitionType"] {
 }
 
 function hasKorean(value = "") {
-  return /[ㄱ-ㅎㅏ-ㅣ가-힣]/.test(value);
+  return /[?-?]/.test(value);
 }
 
 function toKoreanTeamName(team: SofaTeam) {
@@ -623,10 +623,24 @@ export async function fetchMatchDetails(match: Match): Promise<Match> {
 }
 
 export async function fetchPlayerDetails(player: Player): Promise<Player> {
-  const playerId = player.id.match(/kleague-player-(.+)$/)?.[1];
+  let playerId = player.id.match(/kleague-player-(.+)$/)?.[1] || "";
+  let apiPlayer: Player | undefined;
 
   if (!playerId) {
-    return player;
+    const seasonData = await fetch(`/api/chfc-data?season=${encodeURIComponent(player.seasonId)}&_=${Date.now()}`, {
+      cache: "no-store"
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("K리그 선수단 API 오류");
+        return response.json() as Promise<{ players?: Player[] }>;
+      })
+      .catch(() => null);
+    apiPlayer = (seasonData?.players || []).find((row) => normalizePlayerName(row.name) === normalizePlayerName(player.name));
+    playerId = apiPlayer?.id?.match(/kleague-player-(.+)$/)?.[1] || "";
+
+    if (!playerId) {
+      return player;
+    }
   }
 
   const apiDetails = await fetch(`/api/player-detail?season=${encodeURIComponent(player.seasonId)}&playerId=${encodeURIComponent(playerId)}&_=${Date.now()}`, {
@@ -639,7 +653,7 @@ export async function fetchPlayerDetails(player: Player): Promise<Player> {
     .catch(() => null);
 
   if (!apiDetails) {
-    return player;
+    return apiPlayer ? { ...player, ...apiPlayer, name: player.name } : player;
   }
 
   return {
@@ -837,7 +851,7 @@ export async function fetchAutoArchiveData(season: string, fallback: ArchiveData
       playerStats: shouldUseApiPlayers ? replaceSeasonRows(fallback.playerStats, season, mergedApiPlayers) : fallback.playerStats,
       coaches: apiData.coaches?.length ? replaceSeasonRows(fallback.coaches, season, apiData.coaches) : fallback.coaches,
       historyEvents: apiData.historyEvents?.length ? replaceSeasonRows(fallback.historyEvents, season, apiData.historyEvents) : fallback.historyEvents,
-      rankHistory: apiData.rankHistory?.length ? replaceSeasonRows(fallback.rankHistory, season, apiData.rankHistory) : fallback.rankHistory
+      rankHistory: apiData.rankHistory?.length && apiData.rankHistory.length > 1 ? replaceSeasonRows(fallback.rankHistory, season, apiData.rankHistory) : fallback.rankHistory
     };
   }
 
@@ -866,6 +880,6 @@ export async function fetchAutoArchiveData(season: string, fallback: ArchiveData
     squads: shouldUseAutoPlayers ? { ...fallback.squads, [season]: players.map((player) => player.id) } : fallback.squads,
     standings: standing ? replaceSeasonRows(fallback.standings, season, [standing]) : fallback.standings,
     playerStats: shouldUseAutoPlayers ? replaceSeasonRows(fallback.playerStats, season, players) : fallback.playerStats,
-    rankHistory: rankHistory.length ? replaceSeasonRows(fallback.rankHistory, season, rankHistory) : fallback.rankHistory
+    rankHistory: rankHistory.length > 1 ? replaceSeasonRows(fallback.rankHistory, season, rankHistory) : fallback.rankHistory
   };
 }

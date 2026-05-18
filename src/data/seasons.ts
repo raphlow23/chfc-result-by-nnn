@@ -944,12 +944,16 @@ export const archiveData: ArchiveData = {
   ],
   rankHistory: [
     ...pastRankHistory,
-    {
-      seasonId: "2026",
-      matchId: "2026-k2-11",
-      round: "11R",
-      date: "2026-05-09",
-      rank: 15
-    }
+    { seasonId: "2026", matchId: "2026-k2-rank-1", round: "1R", date: "2026-03-01", rank: 11 },
+    { seasonId: "2026", matchId: "2026-k2-rank-2", round: "2R", date: "2026-03-08", rank: 12 },
+    { seasonId: "2026", matchId: "2026-k2-rank-3", round: "3R", date: "2026-03-15", rank: 12 },
+    { seasonId: "2026", matchId: "2026-k2-rank-4", round: "4R", date: "2026-03-22", rank: 13 },
+    { seasonId: "2026", matchId: "2026-k2-rank-5", round: "5R", date: "2026-03-29", rank: 14 },
+    { seasonId: "2026", matchId: "2026-k2-rank-6", round: "6R", date: "2026-04-05", rank: 15 },
+    { seasonId: "2026", matchId: "2026-k2-rank-7", round: "7R", date: "2026-04-12", rank: 13 },
+    { seasonId: "2026", matchId: "2026-k2-rank-8", round: "8R", date: "2026-04-19", rank: 13 },
+    { seasonId: "2026", matchId: "2026-k2-rank-9", round: "9R", date: "2026-04-26", rank: 14 },
+    { seasonId: "2026", matchId: "2026-k2-rank-10", round: "10R", date: "2026-05-03", rank: 13 },
+    { seasonId: "2026", matchId: "2026-k2-rank-11", round: "11R", date: "2026-05-09", rank: 15 }
   ]
 };
