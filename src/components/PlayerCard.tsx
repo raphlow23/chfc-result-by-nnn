@@ -2,6 +2,7 @@ import type { Player } from "../types";
 
 interface PlayerCardProps {
   player: Player;
+  statsReady?: boolean;
   onClick: (player: Player) => void;
 }
 
@@ -11,8 +12,9 @@ function cleanNationality(value = "") {
   return text;
 }
 
-function PlayerCard({ player, onClick }: PlayerCardProps) {
+function PlayerCard({ player, statsReady = true, onClick }: PlayerCardProps) {
   const nationality = cleanNationality(player.nationality);
+  const statValue = (value: number) => statsReady ? value : "";
 
   return (
     <button
@@ -32,15 +34,15 @@ function PlayerCard({ player, onClick }: PlayerCardProps) {
       <div className="mt-4 grid grid-cols-3 gap-2 text-center">
         <div className="rounded-lg bg-slate-50 p-2">
           <span className="block text-xs text-slate-500">출전</span>
-          <strong className="text-brand-navy-950">{player.appearances}</strong>
+          <strong className="block min-h-6 text-brand-navy-950">{statValue(player.appearances)}</strong>
         </div>
         <div className="rounded-lg bg-slate-50 p-2">
           <span className="block text-xs text-slate-500">득점</span>
-          <strong className="text-brand-navy-950">{player.goals}</strong>
+          <strong className="block min-h-6 text-brand-navy-950">{statValue(player.goals)}</strong>
         </div>
         <div className="rounded-lg bg-slate-50 p-2">
           <span className="block text-xs text-slate-500">도움</span>
-          <strong className="text-brand-navy-950">{player.assists}</strong>
+          <strong className="block min-h-6 text-brand-navy-950">{statValue(player.assists)}</strong>
         </div>
       </div>
     </button>

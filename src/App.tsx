@@ -169,6 +169,7 @@ function App() {
   const standing = liveArchiveData.standings.find((item) => item.seasonId === selectedSeason);
   const coaches = liveArchiveData.coaches.filter((coach) => coach.seasonId === selectedSeason);
   const rankHistory = liveArchiveData.rankHistory.filter((point) => point.seasonId === selectedSeason);
+  const playerStatsReady = !isLiveSeason(selectedSeason) || loadedPlayerStatsSeasons.includes(selectedSeason);
 
   const filteredMatches = seasonMatches.filter((match) => {
     const competitionOk = competitionFilter === "all" || match.competitionType === competitionFilter;
@@ -452,7 +453,7 @@ function App() {
         ) : (
           <div className="grid gap-3 sm:grid-cols-2">
             {filteredPlayers.length ? filteredPlayers.map((player) => (
-              <PlayerCard key={player.id} player={player} onClick={openPlayer} />
+              <PlayerCard key={player.id} player={player} statsReady={playerStatsReady} onClick={openPlayer} />
             )) : <p className="rounded-lg border border-slate-200 bg-white p-4 text-slate-500 shadow-sm">등록된 선수 데이터가 없습니다.</p>}
           </div>
         )}
