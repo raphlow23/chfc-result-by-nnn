@@ -977,6 +977,89 @@ function mergeKLeaguePlayerStats(players, stats, season) {
   });
 }
 
+function parseKLeagueMatchPdfPlayerStats(html = "", season = "") {
+  const text = stripHtml(html);
+  const rows = [];
+  const rowRegex = /(?:^|\s)(\d{1,3})\s+(GK|DF|MF|FW)\s+([가-힣A-Za-z\s.'-]+?)\(\d{2}\)[^0-9-]*((?:-|\d+(?:\.\d+)?)(?:\s+(?:-|\d+(?:\.\d+)?)){12})/g;
+  let match;
+
+  while ((match = rowRegex.exec(text)) !== null) {
+    const values = match[4].trim().split(/\s+/);
+    const name = match[3].trim();
+    if (!name || /감독|코치/.test(name) || values.length < 9) continue;
+
+    rows.push({
+      seasonId: season,
+      number: match[1],
+      position: toPlayerPosition(match[2]),
+      name,
+      appearances: toNumber(values[4]),
+      goals: toNumber(values[5]),
+      assists: toNumber(values[6]),
+      yellowCards: toNumber(values[7]),
+      redCards: toNumber(values[8])
+    });
+  }
+
+  return rows;
+}
+
+async function getLatestKLeaguePdfPlayerStats(schedules, season) {
+  const finishedMatches = schedules
+    .filter((item) => getKLeagueStatus(item) === "finished")
+    .filter((item) => item.homeTeam === CHEONGJU_TEAM_ID || item.awayTeam === CHEONGJU_TEAM_ID)
+    .sort((a, b) => `${b.gameDate} ${b.gameTime}`.localeCompare(`${a.gameDate} ${a.gameTime}`));
+
+  for (const match of finishedMatches.slice(0, 4)) {
+    const html = await fetchKLeagueHtml(`${KLEAGUE_ORIGIN}/match/pdfDownload.do?gameId=${encodeURIComponent(match.gameId)}&meetSeq=${encodeURIComponent(match.meetSeq)}&year=${encodeURIComponent(season)}`).catch(() => "");
+    const rows = parseKLeagueMatchPdfPlayerStats(html, season);
+    const cheongjuRows = rows.filter((row) => {
+      const matchingPlayer = row.number
+        ? rows.find((candidate) => candidate.number === row.number && candidate.name !== row.name)
+        : null;
+      return !matchingPlayer || playerNameKey(row.name) !== playerNameKey(matchingPlayer.name);
+    });
+
+    if (cheongjuRows.length >= 5) return cheongjuRows;
+  }
+
+  return [];
+}
+
+function mergeKLeaguePdfStats(players, stats, season) {
+  if (!stats.length) return players;
+
+  const statsByName = new Map(stats.map((row) => [playerNameKey(row.name), row]));
+
+  return players.map((player) => {
+    const stat = statsByName.get(playerNameKey(player.name));
+    if (!stat) return player;
+
+    const appearances = Math.max(Number(player.appearances || 0), Number(stat.appearances || 0));
+    const goals = Math.max(Number(player.goals || 0), Number(stat.goals || 0));
+    const assists = Math.max(Number(player.assists || 0), Number(stat.assists || 0));
+
+    return {
+      ...player,
+      number: player.number || stat.number,
+      position: player.position || stat.position,
+      appearances,
+      goals,
+      assists,
+      yellowCards: Math.max(Number(player.yellowCards || 0), Number(stat.yellowCards || 0)),
+      redCards: Math.max(Number(player.redCards || 0), Number(stat.redCards || 0)),
+      seasonRecords: [
+        {
+          season,
+          appearances,
+          goals,
+          assists
+        }
+      ]
+    };
+  });
+}
+
 function getSeasonCoaches(season) {
   const coachMap = {
     "2026": [
@@ -1252,12 +1335,13 @@ async function getKLeagueArchive(season, mode = "full") {
   const cheongjuLeagueId = matches[0]?.kLeague?.leagueId || KLEAGUE_LEAGUE_ID;
   const leagueSchedules = schedules.filter((item) => String(item.leagueId) === String(cheongjuLeagueId));
   const computedStandings = buildKLeagueStandingFromSchedules(leagueSchedules, season);
-  const [standings, players, playerStats] = await Promise.all([
+  const [standings, players, playerStats, pdfPlayerStats] = await Promise.all([
     computedStandings.length ? computedStandings : getKLeagueStanding(season, cheongjuLeagueId).catch(() => []),
     mode === "fast" ? Promise.resolve([]) : getKLeaguePlayersFromMatches(leagueSchedules, season).catch(() => []),
-    mode === "fast" ? Promise.resolve([]) : getKLeaguePlayerStats(season, cheongjuLeagueId).catch(() => [])
+    mode === "fast" ? Promise.resolve([]) : getKLeaguePlayerStats(season, cheongjuLeagueId).catch(() => []),
+    mode === "fast" ? Promise.resolve([]) : getLatestKLeaguePdfPlayerStats(leagueSchedules, season).catch(() => [])
   ]);
-  const enrichedPlayers = mergeKLeaguePlayerStats(players, playerStats, season);
+  const enrichedPlayers = mergeKLeaguePdfStats(mergeKLeaguePlayerStats(players, playerStats, season), pdfPlayerStats, season);
 
   if (!matches.length) {
     throw new Error("K League matches not found");
