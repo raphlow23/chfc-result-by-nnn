@@ -886,7 +886,9 @@ const cheongjuPlayerNameAliases = {
   "DONGWON LEE": "이동원",
   "LEE DONGWON": "이동원",
   "LIM JUNYOUNG": "임준영",
-  "JUNYOUNG LIM": "임준영"
+  "JUNYOUNG LIM": "임준영",
+  "KIM YUNHWAN": "김윤환",
+  "YUNHWAN KIM": "김윤환"
 };
 
 const cheongjuKnownPlayerNames = new Set([
@@ -903,6 +905,33 @@ function playerNameKey(value = "") {
 }
 
 function parseKLeaguePlayerRankPage(html = "", season = "") {
+  const tableRows = [...html.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)]
+    .map((row) => [...row[1].matchAll(/<(?:td|th)[^>]*>([\s\S]*?)<\/(?:td|th)>/gi)].map((cell) => stripHtml(cell[1])))
+    .filter((cells) => cells.length >= 6);
+  const tableParsedRows = [];
+
+  tableRows.forEach((cells) => {
+    const clubIndex = cells.findIndex((cell) => /CHUNGBUK|CHEONGJU/i.test(cell) || cell.includes("충북청주"));
+    if (clubIndex <= 0) return;
+
+    const name = cells[clubIndex - 1] || "";
+    const values = cells.slice(clubIndex + 1);
+    if (!name || /PLAYER|선수/i.test(name) || values.length < 10) return;
+
+    tableParsedRows.push({
+      rank: toNumber(cells[0]),
+      name,
+      goals: toNumber(values[0]),
+      assists: toNumber(values[1]),
+      yellowCards: toNumber(values[9]),
+      redCards: toNumber(values[10]),
+      appearances: toNumber(values[12] ?? values[values.length - 1]),
+      seasonId: season
+    });
+  });
+
+  if (tableParsedRows.length) return tableParsedRows;
+
   const text = stripHtml(html);
   const body = text.split("Rank Player Name Club Goal Assist")[1]?.split("라이트 모드")[0] || "";
   const rows = [];
@@ -938,7 +967,7 @@ async function getKLeaguePlayerStats(season, leagueId = KLEAGUE_LEAGUE_ID) {
     const html = await fetchKLeagueHtml(url).catch(() => "");
     const rows = parseKLeaguePlayerRankPage(html, season);
     rows.forEach((row) => {
-      const key = normalizePlayerName(row.name);
+      const key = playerNameKey(row.name);
       const existing = merged.get(key) || {};
       merged.set(key, {
         ...existing,

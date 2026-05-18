@@ -2,7 +2,6 @@ import type { Player } from "../types";
 
 interface PlayerCardProps {
   player: Player;
-  statsReady?: boolean;
   onClick: (player: Player) => void;
 }
 
@@ -12,7 +11,7 @@ function cleanNationality(value = "") {
   return text;
 }
 
-function PlayerCard({ player, statsReady = true, onClick }: PlayerCardProps) {
+function PlayerCard({ player, onClick }: PlayerCardProps) {
   const nationality = cleanNationality(player.nationality);
   const statValue = (value: number) => value;
 

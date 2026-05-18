@@ -674,6 +674,25 @@ export async function fetchPlayerDetails(player: Player): Promise<Player> {
 }
 
 export async function fetchSeasonPlayerStats(season: string, players: Player[]): Promise<Player[]> {
+  const archiveData = await fetch(`/api/chfc-data?season=${encodeURIComponent(season)}&mode=full&_=${Date.now()}`, {
+    cache: "no-store"
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error("player archive unavailable");
+      return response.json() as Promise<Partial<ArchiveData>>;
+    })
+    .catch(() => null);
+
+  const sourcePlayers = archiveData?.playerStats?.length ? archiveData.playerStats : archiveData?.players;
+  const archivePlayers = Array.isArray(sourcePlayers) ? sourcePlayers : [];
+  if (!archivePlayers.length) {
+    throw new Error("player stats unavailable");
+  }
+
+  return mergePlayerStatsByName(players, archivePlayers, season);
+}
+
+async function fetchSeasonPlayerStatsLegacy(season: string, players: Player[]): Promise<Player[]> {
   const mergeFromArchive = async () => {
     const archiveData = await fetch(`/api/chfc-data?season=${encodeURIComponent(season)}&mode=full&_=${Date.now()}`, {
       cache: "no-store"
@@ -910,7 +929,9 @@ const cheongjuPlayerNameAliases: Record<string, string> = {
   DONGWONLEE: "이동원",
   LEEDONGWON: "이동원",
   LIMJUNYOUNG: "임준영",
-  JUNYOUNGLIM: "임준영"
+  JUNYOUNGLIM: "임준영",
+  KIMYUNHWAN: "김윤환",
+  YUNHWANKIM: "김윤환"
 };
 
 function getPlayerNameKey(value = "") {
