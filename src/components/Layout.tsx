@@ -36,26 +36,26 @@ function Layout({ children, seasons, selectedSeason, activeTab, onSeasonChange, 
   return (
     <div className="min-h-screen bg-slate-50 text-brand-navy-950" style={themeStyle}>
       <header className="sticky top-0 z-10 border-b-4 border-brand-red-600 bg-brand-navy-800 text-white shadow-sm">
-        <div className="mx-auto flex max-w-3xl items-center gap-3 px-4 py-4">
+        <div className="mx-auto flex max-w-3xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:py-4">
           <button
-            className="grid min-w-0 flex-1 grid-cols-[72px_1fr_72px] items-center gap-3 text-left"
+            className="grid w-full min-w-0 flex-1 grid-cols-[54px_1fr_54px] items-center gap-3 text-left sm:grid-cols-[72px_1fr_72px]"
             type="button"
             onClick={() => onTabChange("home")}
             aria-label="홈으로 이동"
           >
             {appConfig.logoUrl ? (
-              <img className="h-[72px] w-[72px] shrink-0 object-contain" src={appConfig.logoUrl} alt={`${appConfig.teamName} 로고`} />
+              <img className="h-[54px] w-[54px] shrink-0 object-contain sm:h-[72px] sm:w-[72px]" src={appConfig.logoUrl} alt={`${appConfig.teamName} 로고`} />
             ) : (
-              <div className="grid h-[72px] w-[72px] shrink-0 place-items-center rounded-lg bg-brand-red-600 text-sm font-black text-white">
+              <div className="grid h-[54px] w-[54px] shrink-0 place-items-center rounded-lg bg-brand-red-600 text-sm font-black text-white sm:h-[72px] sm:w-[72px]">
                 {appConfig.logoText}
               </div>
             )}
             <div className="min-w-0 text-center">
-              <h1 className="truncate text-[clamp(15px,3.6vw,28px)] font-black leading-none tracking-[0.12em] text-white">
+              <h1 className="text-[clamp(21px,8vw,32px)] font-black leading-none tracking-[0.16em] text-white sm:text-[clamp(15px,3.6vw,28px)] sm:tracking-[0.12em]">
                 <span className="hidden sm:inline">CHFC SEASON RECORD</span>
                 <span className="sm:hidden">SEASON</span>
               </h1>
-              <div className="mt-4 flex items-center justify-center gap-2">
+              <div className="mt-3 hidden items-center justify-center gap-2 sm:flex">
                 <span className="h-px w-full max-w-20 bg-brand-red-600" />
                 <span className="shrink-0 rounded-full border border-brand-red-600 px-4 py-1 text-[clamp(9px,1.9vw,12px)] font-black tracking-[0.14em] text-brand-red-100">
                   ULTRAS NNN
@@ -64,10 +64,18 @@ function Layout({ children, seasons, selectedSeason, activeTab, onSeasonChange, 
               </div>
             </div>
             {appConfig.supporterLogoUrl ? (
-              <img className="h-[72px] w-[72px] object-contain" src={appConfig.supporterLogoUrl} alt="ULTRAS NNN 로고" />
+              <img className="h-[54px] w-[54px] object-contain sm:h-[72px] sm:w-[72px]" src={appConfig.supporterLogoUrl} alt="ULTRAS NNN 로고" />
             ) : null}
           </button>
-          <div className="shrink-0">
+
+          <div className="flex w-full items-center gap-3 sm:w-auto sm:shrink-0">
+            <div className="flex min-w-0 flex-1 items-center gap-2 sm:hidden">
+              <span className="h-px flex-1 bg-brand-red-600" />
+              <span className="shrink-0 rounded-full border border-brand-red-600 px-4 py-1 text-xs font-black tracking-[0.14em] text-brand-red-100">
+                ULTRAS NNN
+              </span>
+              <span className="h-px flex-1 bg-brand-red-600" />
+            </div>
             <SeasonSelector seasons={seasons} selectedSeason={selectedSeason} onChange={onSeasonChange} />
           </div>
         </div>
