@@ -11,7 +11,8 @@
     "dev:host": "vite --host 0.0.0.0",
     "build": "node ./node_modules/vite/bin/vite.js build",
     "preview": "vite preview",
-    "sync:past-details": "node scripts/fill-past-match-details.mjs"
+    "sync:past-details": "node scripts/fill-past-match-details.mjs",
+    "sync:live-2026": "node scripts/sync-live-2026.mjs"
   },
   "dependencies": {
     "react": "19.2.6",

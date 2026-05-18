@@ -674,7 +674,16 @@ export async function fetchPlayerDetails(player: Player): Promise<Player> {
 }
 
 export async function fetchSeasonPlayerStats(season: string, players: Player[]): Promise<Player[]> {
-  const archiveData = await fetch(`/api/chfc-data?season=${encodeURIComponent(season)}&mode=full&_=${Date.now()}`, {
+  const snapshotData = await fetch(`/live/${season}.json?_=${Date.now()}`, {
+    cache: "no-store"
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error("live snapshot missing");
+      return response.json() as Promise<Partial<ArchiveData>>;
+    })
+    .catch(() => null);
+
+  const archiveData = snapshotData || await fetch(`/api/chfc-data?season=${encodeURIComponent(season)}&mode=full&_=${Date.now()}`, {
     cache: "no-store"
   })
     .then((response) => {
@@ -1076,7 +1085,12 @@ function mergeMatches(rows: Match[], season: string, nextRows: Match[]) {
 }
 
 export async function fetchAutoArchiveData(season: string, fallback: ArchiveData = archiveData): Promise<ArchiveData> {
-  const apiData = await fetch(`/api/chfc-data?season=${season}&mode=fast&_=${Date.now()}`, { cache: "no-store" }).then((response) => {
+  const snapshotData = await fetch(`/live/${season}.json?_=${Date.now()}`, { cache: "no-store" }).then((response) => {
+    if (!response.ok) throw new Error("live snapshot missing");
+    return response.json() as Promise<ArchiveData>;
+  }).catch(() => null);
+
+  const apiData = snapshotData || await fetch(`/api/chfc-data?season=${season}&mode=fast&_=${Date.now()}`, { cache: "no-store" }).then((response) => {
     if (!response.ok) throw new Error("내부 API 없음");
     return response.json() as Promise<ArchiveData>;
   }).catch(() => null);

@@ -212,6 +212,11 @@ function App() {
       .then((nextData) => {
         if (!alive) return;
         setLiveArchiveData(nextData);
+        const syncedPlayers = nextData.players.filter((player) => player.seasonId === selectedSeason);
+        const hasSyncedPlayerStats = syncedPlayers.some((player) => Number(player.appearances || 0) > 0 || Number(player.goals || 0) > 0 || Number(player.assists || 0) > 0);
+        if (hasSyncedPlayerStats) {
+          setLoadedPlayerStatsSeasons((seasons) => seasons.includes(selectedSeason) ? seasons : [...seasons, selectedSeason]);
+        }
       })
       .catch(() => {
         if (!alive) return;
