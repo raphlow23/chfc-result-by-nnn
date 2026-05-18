@@ -590,7 +590,7 @@ function extractKLeagueEntryPlayers(html = "", teamId = "") {
         name: cells[2] || ""
       };
     })
-    .filter((player) => player.playerId && player.name && player.name.toLowerCase() !== "manager");
+    .filter((player) => player.playerId && player.name.toLowerCase() !== "manager");
 }
 
 function extractKLeagueActiveRosterPlayers(html = "", teamId = "") {
@@ -598,6 +598,27 @@ function extractKLeagueActiveRosterPlayers(html = "", teamId = "") {
 
   const rows = [];
   const seen = new Set();
+  const imageBlocks = [...html.matchAll(new RegExp(`/v1/player/[^"']+/${teamId}/player_([0-9]+)\\.png([\\s\\S]{0,900}?)(?=/v1/player/|</body>|$)`, "g"))];
+
+  imageBlocks.forEach((match) => {
+    if (seen.has(match[1])) return;
+
+    const text = stripHtml(match[2]);
+    const noMatch = text.match(/No\.?\s*([0-9]+)/i);
+    const nameMatch = text.match(/([가-힣A-Za-z][가-힣A-Za-z\s.'-]*?)\s+Chungbuk Cheongju FC/i);
+    const name = (nameMatch?.[1] || "").replace(/^Image\s*/i, "").trim();
+
+    if (/Manager|Coach|코치|감독|피지컬|전력분석/i.test(text)) return;
+
+    seen.add(match[1]);
+    rows.push({
+      playerId: match[1],
+      number: noMatch?.[1] || "",
+      position: "",
+      name
+    });
+  });
+
   const playerBlocks = [...html.matchAll(/playerDetailPop\('([^']+)'\s*,\s*'([^']+)'\)([\s\S]{0,1400}?)(?=playerDetailPop\('|<\/li>|<\/div>\s*<div|$)/g)];
 
   playerBlocks.forEach((match) => {
@@ -608,7 +629,7 @@ function extractKLeagueActiveRosterPlayers(html = "", teamId = "") {
     const nameMatch = text.match(/(?:^|\s)([가-힣A-Za-z][가-힣A-Za-z\s.'-]*?)\s+(?:충북청주|Chungbuk Cheongju)/i);
     const name = (nameMatch?.[1] || "").replace(/^Image\s*/i, "").trim();
 
-    if (!name || /Manager|Coach|코치|감독|피지컬|전력분석/i.test(text)) return;
+    if (/Manager|Coach|코치|감독|피지컬|전력분석/i.test(text)) return;
 
     seen.add(match[2]);
     rows.push({
@@ -834,7 +855,7 @@ async function getKLeaguePlayersFromMatches(schedules, season) {
       fetchKLeaguePlayerDetailPage(row.playerId, season)
     ]);
     const profileName = profile?.name || "";
-    const name = hasKorean(profileName) ? profileName : detailPage?.name || row.name;
+    const name = hasKorean(profileName) ? profileName : detailPage?.name || row.name || `No.${row.number || row.playerId}`;
     const number = detailPage?.number || profile?.number || row.number || "";
     const position = detailPage?.position || profile?.position || row.position || "";
 
@@ -990,9 +1011,10 @@ function mergeKLeaguePlayerStats(players, stats, season) {
   if (!stats.length) return players;
 
   const statsByName = new Map(stats.map((row) => [playerNameKey(row.name), row]));
+  const statsByNumber = new Map(stats.filter((row) => row.number).map((row) => [String(row.number), row]));
 
   return players.map((player) => {
-    const stat = statsByName.get(playerNameKey(player.name));
+    const stat = statsByName.get(playerNameKey(player.name)) || statsByNumber.get(String(player.number || ""));
     if (!stat) return player;
 
     return {
@@ -1113,9 +1135,10 @@ function mergeKLeaguePdfStats(players, stats, season) {
   if (!stats.length) return players;
 
   const statsByName = new Map(stats.map((row) => [playerNameKey(row.name), row]));
+  const statsByNumber = new Map(stats.filter((row) => row.number).map((row) => [String(row.number), row]));
 
   return players.map((player) => {
-    const stat = statsByName.get(playerNameKey(player.name));
+    const stat = statsByName.get(playerNameKey(player.name)) || statsByNumber.get(String(player.number || ""));
     if (!stat) return player;
 
     const appearances = Math.max(Number(player.appearances || 0), Number(stat.appearances || 0));

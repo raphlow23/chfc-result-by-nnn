@@ -815,9 +815,14 @@ function mergePlayerStatsByName(players: Player[], archivePlayers: Player[], sea
       .filter((player) => getPlayerNameKey(player.name))
       .map((player) => [getPlayerNameKey(player.name), player])
   );
+  const archiveByNumber = new Map(
+    archivePlayers
+      .filter((player) => player.number)
+      .map((player) => [String(player.number), player])
+  );
 
   return players.map((player) => {
-    const stats = archiveByName.get(getPlayerNameKey(player.name));
+    const stats = archiveByName.get(getPlayerNameKey(player.name)) || archiveByNumber.get(String(player.number || ""));
     if (!stats) return player;
 
     const appearances = Math.max(Number(player.appearances || 0), Number(stats.appearances || 0));
