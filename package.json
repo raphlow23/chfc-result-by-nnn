@@ -10,7 +10,8 @@
     "dev": "vite",
     "dev:host": "vite --host 0.0.0.0",
     "build": "node ./node_modules/vite/bin/vite.js build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sync:past-details": "node scripts/fill-past-match-details.mjs"
   },
   "dependencies": {
     "react": "19.2.6",
