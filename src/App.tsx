@@ -263,7 +263,7 @@ function App() {
   function openMatch(match: Match) {
     setSelectedMatch(match);
 
-    if (!isLiveSeason(match.seasonId) && !match.kLeague) {
+    if (!isLiveSeason(match.seasonId)) {
       setMatchDetailLoading(false);
       return;
     }
