@@ -954,6 +954,7 @@ export const archiveData: ArchiveData = {
     { seasonId: "2026", matchId: "2026-k2-rank-8", round: "8R", date: "2026-04-19", rank: 13 },
     { seasonId: "2026", matchId: "2026-k2-rank-9", round: "9R", date: "2026-04-26", rank: 14 },
     { seasonId: "2026", matchId: "2026-k2-rank-10", round: "10R", date: "2026-05-03", rank: 13 },
-    { seasonId: "2026", matchId: "2026-k2-rank-11", round: "11R", date: "2026-05-09", rank: 15 }
+    { seasonId: "2026", matchId: "2026-k2-rank-11", round: "11R", date: "2026-05-09", rank: 15 },
+    { seasonId: "2026", matchId: "2026-k2-rank-12", round: "12R", date: "2026-05-16", rank: 15 }
   ]
 };

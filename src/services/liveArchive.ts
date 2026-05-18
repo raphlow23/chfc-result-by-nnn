@@ -724,6 +724,18 @@ function replaceSeasonRows<T extends { seasonId: string }>(rows: T[], season: st
   return [...rows.filter((row) => row.seasonId !== season), ...nextRows];
 }
 
+function mergeRankHistoryRows(rows: RankPoint[], season: string, nextRows: RankPoint[]) {
+  const otherRows = rows.filter((row) => row.seasonId !== season);
+  const merged = new Map<string, RankPoint>();
+
+  rows
+    .filter((row) => row.seasonId === season)
+    .forEach((row) => merged.set(row.round || row.matchId, row));
+  nextRows.forEach((row) => merged.set(row.round || row.matchId, row));
+
+  return [...otherRows, ...merged.values()].sort((a, b) => a.date.localeCompare(b.date));
+}
+
 function normalizePlayerName(value = "") {
   return String(value || "")
     .replace(/[.,]/g, "")
@@ -851,7 +863,7 @@ export async function fetchAutoArchiveData(season: string, fallback: ArchiveData
       playerStats: shouldUseApiPlayers ? replaceSeasonRows(fallback.playerStats, season, mergedApiPlayers) : fallback.playerStats,
       coaches: apiData.coaches?.length ? replaceSeasonRows(fallback.coaches, season, apiData.coaches) : fallback.coaches,
       historyEvents: apiData.historyEvents?.length ? replaceSeasonRows(fallback.historyEvents, season, apiData.historyEvents) : fallback.historyEvents,
-      rankHistory: apiData.rankHistory?.length && apiData.rankHistory.length > 1 ? replaceSeasonRows(fallback.rankHistory, season, apiData.rankHistory) : fallback.rankHistory
+      rankHistory: apiData.rankHistory?.length && apiData.rankHistory.length > 1 ? mergeRankHistoryRows(fallback.rankHistory, season, apiData.rankHistory) : fallback.rankHistory
     };
   }
 
@@ -880,6 +892,6 @@ export async function fetchAutoArchiveData(season: string, fallback: ArchiveData
     squads: shouldUseAutoPlayers ? { ...fallback.squads, [season]: players.map((player) => player.id) } : fallback.squads,
     standings: standing ? replaceSeasonRows(fallback.standings, season, [standing]) : fallback.standings,
     playerStats: shouldUseAutoPlayers ? replaceSeasonRows(fallback.playerStats, season, players) : fallback.playerStats,
-    rankHistory: rankHistory.length > 1 ? replaceSeasonRows(fallback.rankHistory, season, rankHistory) : fallback.rankHistory
+    rankHistory: rankHistory.length > 1 ? mergeRankHistoryRows(fallback.rankHistory, season, rankHistory) : fallback.rankHistory
   };
 }

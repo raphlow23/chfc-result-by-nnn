@@ -495,22 +495,22 @@ function getKLeagueStatus(item) {
 }
 
 async function getKLeagueSchedules(season) {
-  const schedules = [];
-
-  for (const leagueId of KLEAGUE_LEAGUE_IDS) {
-    for (let month = 1; month <= 12; month += 1) {
-      const data = await postKLeagueJson("/getScheduleList.do", {
+  const requests = KLEAGUE_LEAGUE_IDS.flatMap((leagueId) =>
+    Array.from({ length: 12 }, (_, index) => ({ leagueId, month: String(index + 1).padStart(2, "0") }))
+  );
+  const results = await Promise.all(
+    requests.map(({ leagueId, month }) =>
+      postKLeagueJson("/getScheduleList.do", {
         leagueId,
         teamId: null,
         ticketStatus: null,
         year: Number(season),
-        month: String(month).padStart(2, "0"),
+        month,
         ticketYn: null
-      });
-
-      schedules.push(...(data?.data?.scheduleList || []));
-    }
-  }
+      }).catch(() => null)
+    )
+  );
+  const schedules = results.flatMap((data) => data?.data?.scheduleList || []);
 
   return [...new Map(schedules.map((item) => [`${item.year}-${item.meetSeq}-${item.gameId}`, item])).values()]
     .sort((a, b) => `${a.gameDate} ${a.gameTime}`.localeCompare(`${b.gameDate} ${b.gameTime}`));
