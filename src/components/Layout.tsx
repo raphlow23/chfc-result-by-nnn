@@ -55,6 +55,13 @@ function Layout({ children, seasons, selectedSeason, activeTab, onSeasonChange, 
                 <span className="hidden sm:inline">CHFC SEASON RECORD</span>
                 <span className="sm:hidden">SEASON</span>
               </h1>
+              <div className="mt-2 flex items-center justify-center gap-1.5 sm:hidden">
+                <span className="h-px w-full max-w-8 bg-brand-red-600" />
+                <span className="shrink-0 rounded-full border border-brand-red-600 px-2.5 py-0.5 text-[9px] font-black tracking-[0.12em] text-brand-red-100">
+                  ULTRAS NNN
+                </span>
+                <span className="h-px w-full max-w-8 bg-brand-red-600" />
+              </div>
               <div className="mt-3 hidden items-center justify-center gap-2 sm:flex">
                 <span className="h-px w-full max-w-20 bg-brand-red-600" />
                 <span className="shrink-0 rounded-full border border-brand-red-600 px-4 py-1 text-[clamp(9px,1.9vw,12px)] font-black tracking-[0.14em] text-brand-red-100">
