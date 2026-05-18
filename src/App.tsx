@@ -160,6 +160,7 @@ function App() {
   const [autoDataLoading, setAutoDataLoading] = useState(false);
   const [autoDataError, setAutoDataError] = useState("");
   const [loadedPlayerStatsSeasons, setLoadedPlayerStatsSeasons] = useState<string[]>([]);
+  const [playerStatsLoading, setPlayerStatsLoading] = useState(false);
 
   const season = liveArchiveData.seasons.find((item) => item.id === selectedSeason) || liveArchiveData.seasons[0];
   const seasonMatches = liveArchiveData.matches
@@ -237,6 +238,8 @@ function App() {
       };
     }
 
+    setPlayerStatsLoading(true);
+
     fetchSeasonPlayerStats(selectedSeason, seasonPlayers)
       .then((playersWithStats) => {
         if (!alive) return;
@@ -253,7 +256,11 @@ function App() {
         }));
         setLoadedPlayerStatsSeasons((seasons) => seasons.includes(selectedSeason) ? seasons : [...seasons, selectedSeason]);
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => {
+        if (!alive) return;
+        setPlayerStatsLoading(false);
+      });
 
     return () => {
       alive = false;
@@ -428,6 +435,8 @@ function App() {
   }
 
   function renderSquad() {
+    const shouldWaitForLiveStats = isLiveSeason(selectedSeason) && playerFilter !== "STAFF" && (playerStatsLoading || !loadedPlayerStatsSeasons.includes(selectedSeason));
+
     return (
       <div className="space-y-4">
         <SectionTitle title="선수단" description="선수 카드를 누르면 시즌 상세 기록을 확인할 수 있습니다." />
@@ -439,7 +448,11 @@ function App() {
           ))}
         </div>
 
-        {playerFilter === "STAFF" ? (
+        {shouldWaitForLiveStats ? (
+          <p className="rounded-lg border border-slate-200 bg-white p-4 text-slate-500 shadow-sm">
+            2026 선수 기록을 불러오는 중입니다.
+          </p>
+        ) : playerFilter === "STAFF" ? (
           <div className="space-y-3">
             {coaches.map((coach) => (
               <article key={coach.id} className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
