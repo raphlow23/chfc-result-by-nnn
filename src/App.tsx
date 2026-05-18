@@ -295,6 +295,11 @@ function App() {
     fetchPlayerDetails(player)
       .then((details) => {
         setSelectedPlayer(details);
+        setLiveArchiveData((currentData) => ({
+          ...currentData,
+          players: currentData.players.map((row) => row.id === player.id ? details : row),
+          playerStats: currentData.playerStats.map((row) => row.id === player.id ? details : row)
+        }));
       })
       .catch(() => {
         setSelectedPlayer(player);

@@ -734,7 +734,7 @@ export async function fetchSeasonPlayerStats(season: string, players: Player[]):
       };
     });
 
-    return mergePlayerStatsByName(players, enrichedPlayers, season);
+    return enrichPlayersWithDetailStats(mergePlayerStatsByName(players, enrichedPlayers, season));
   };
 
   const rows = players
@@ -763,7 +763,7 @@ export async function fetchSeasonPlayerStats(season: string, players: Player[]):
 
   const statsById = new Map((apiData?.players || []).map((row) => [row.playerId || "", row]));
 
-  return players.map((player) => {
+  const playersWithStats = players.map((player) => {
     const playerId = player.id.match(/kleague-player-(.+)$/)?.[1] || "";
     const stats = statsById.get(playerId);
     if (!stats) return player;
@@ -786,6 +786,8 @@ export async function fetchSeasonPlayerStats(season: string, players: Player[]):
       ]
     };
   });
+
+  return enrichPlayersWithDetailStats(playersWithStats);
 }
 
 function mergePlayerStatsByName(players: Player[], archivePlayers: Player[], season: string) {
@@ -829,6 +831,48 @@ function mergePlayerStatsByName(players: Player[], archivePlayers: Player[], sea
         : [
             {
               season,
+              appearances,
+              goals,
+              assists
+            }
+          ]
+    };
+  });
+}
+
+async function enrichPlayersWithDetailStats(players: Player[]) {
+  return mapLimit(players, 4, async (player) => {
+    if (!player.id.includes("kleague-player")) return player;
+
+    const details = await fetchPlayerDetails(player).catch(() => null);
+    if (!details) return player;
+
+    const appearances = Math.max(Number(player.appearances || 0), Number(details.appearances || 0));
+    const goals = keepUsefulNumber(details.goals, player.goals);
+    const assists = keepUsefulNumber(details.assists, player.assists);
+
+    return {
+      ...player,
+      number: details.number || player.number,
+      position: details.position || player.position,
+      nationality: details.nationality || player.nationality,
+      birthDate: details.birthDate || player.birthDate,
+      height: details.height || player.height,
+      weight: details.weight || player.weight,
+      joinedYear: details.joinedYear || player.joinedYear,
+      previousClubs: details.previousClubs?.length ? details.previousClubs : player.previousClubs,
+      nextClubs: details.nextClubs?.length ? details.nextClubs : player.nextClubs,
+      appearances,
+      goals,
+      assists,
+      cleanSheets: keepUsefulNumber(details.cleanSheets, player.cleanSheets),
+      yellowCards: keepUsefulNumber(details.yellowCards, player.yellowCards),
+      redCards: keepUsefulNumber(details.redCards, player.redCards),
+      seasonRecords: details.seasonRecords?.length
+        ? details.seasonRecords
+        : [
+            {
+              season: player.seasonId,
               appearances,
               goals,
               assists
@@ -883,6 +927,22 @@ function keepUsefulNumber(nextValue: number | undefined, currentValue: number | 
   const nextNumber = Number(nextValue || 0);
   const currentNumber = Number(currentValue || 0);
   return nextNumber > 0 ? nextNumber : currentNumber;
+}
+
+async function mapLimit<T, R>(items: T[], limit: number, mapper: (item: T, index: number) => Promise<R>) {
+  const results: R[] = [];
+  let index = 0;
+
+  async function worker() {
+    while (index < items.length) {
+      const currentIndex = index;
+      index += 1;
+      results[currentIndex] = await mapper(items[currentIndex], currentIndex);
+    }
+  }
+
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, () => worker()));
+  return results;
 }
 
 function mergePlayersWithExistingStats(existingRows: Player[], season: string, nextRows: Player[]) {
