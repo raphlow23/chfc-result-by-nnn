@@ -52,7 +52,8 @@ function Layout({ children, seasons, selectedSeason, activeTab, onSeasonChange, 
             )}
             <div className="min-w-0 text-center">
               <h1 className="truncate text-[clamp(15px,3.6vw,28px)] font-black leading-none tracking-[0.12em] text-white">
-                CHFC SEASON RECORD
+                <span className="hidden sm:inline">CHFC SEASON RECORD</span>
+                <span className="sm:hidden">SEASON</span>
               </h1>
               <div className="mt-4 flex items-center justify-center gap-2">
                 <span className="h-px w-full max-w-20 bg-brand-red-600" />

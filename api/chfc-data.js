@@ -2,10 +2,10 @@ const SOFASCORE_TOURNAMENT_ID = 777;
 const SOFASCORE_API = "https://api.sofascore.com/api/v1";
 const KLEAGUE_ORIGIN = "https://www.kleague.com";
 const KLEAGUE_LEAGUE_ID = "2";
-const KLEAGUE_LEAGUE_IDS = ["1", "2"];
+const KLEAGUE_LEAGUE_IDS = ["2"];
 const CHEONGJU_TEAM_ID = "K37";
 const archiveCache = new Map();
-const ARCHIVE_CACHE_MS = 5 * 60 * 1000;
+const ARCHIVE_CACHE_MS = 30 * 60 * 1000;
 
 const teamNameKo = {
   "Chungbuk Cheongju FC": "충북청주 FC",
@@ -1174,8 +1174,8 @@ function buildKLeagueStandingFromSchedules(schedules, season) {
   }];
 }
 
-async function getKLeagueArchive(season) {
-  const cacheKey = `v2:${season}`;
+async function getKLeagueArchive(season, mode = "full") {
+  const cacheKey = `v3:${mode}:${season}`;
   const cached = archiveCache.get(cacheKey);
   if (cached && Date.now() - cached.savedAt < ARCHIVE_CACHE_MS) {
     return cached.data;
@@ -1188,8 +1188,8 @@ async function getKLeagueArchive(season) {
   const computedStandings = buildKLeagueStandingFromSchedules(leagueSchedules, season);
   const [standings, players, playerStats] = await Promise.all([
     computedStandings.length ? computedStandings : getKLeagueStanding(season, cheongjuLeagueId).catch(() => []),
-    getKLeaguePlayersFromMatches(leagueSchedules, season).catch(() => []),
-    getKLeaguePlayerStats(season, cheongjuLeagueId).catch(() => [])
+    mode === "fast" ? Promise.resolve([]) : getKLeaguePlayersFromMatches(leagueSchedules, season).catch(() => []),
+    mode === "fast" ? Promise.resolve([]) : getKLeaguePlayerStats(season, cheongjuLeagueId).catch(() => [])
   ]);
   const enrichedPlayers = mergeKLeaguePlayerStats(players, playerStats, season);
 
@@ -1220,9 +1220,10 @@ async function getKLeagueArchive(season) {
 
 export default async function handler(request, response) {
   const season = String(request.query.season || "2026");
+  const mode = String(request.query.mode || "full");
 
   try {
-    const kLeagueData = await getKLeagueArchive(season).catch(() => null);
+    const kLeagueData = await getKLeagueArchive(season, mode).catch(() => null);
 
     if (kLeagueData) {
       response.setHeader("Cache-Control", "no-store");

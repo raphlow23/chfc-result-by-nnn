@@ -831,7 +831,7 @@ function mergeMatches(rows: Match[], season: string, nextRows: Match[]) {
 }
 
 export async function fetchAutoArchiveData(season: string, fallback: ArchiveData = archiveData): Promise<ArchiveData> {
-  const apiData = await fetch(`/api/chfc-data?season=${season}&_=${Date.now()}`, { cache: "no-store" }).then((response) => {
+  const apiData = await fetch(`/api/chfc-data?season=${season}&mode=fast&_=${Date.now()}`, { cache: "no-store" }).then((response) => {
     if (!response.ok) throw new Error("내부 API 없음");
     return response.json() as Promise<ArchiveData>;
   }).catch(() => null);
