@@ -229,7 +229,7 @@ function App() {
   useEffect(() => {
     let alive = true;
 
-    const shouldLoadPlayerStats = isLiveSeason(selectedSeason) && (activeTab === "home" || (activeTab === "records" && recordTab === "player"));
+    const shouldLoadPlayerStats = isLiveSeason(selectedSeason) && (activeTab === "home" || activeTab === "squad" || (activeTab === "records" && recordTab === "player"));
 
     if (!shouldLoadPlayerStats || !seasonPlayers.length || loadedPlayerStatsSeasons.includes(selectedSeason)) {
       return () => {
