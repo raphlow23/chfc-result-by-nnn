@@ -14,7 +14,7 @@ function cleanNationality(value = "") {
 
 function PlayerCard({ player, statsReady = true, onClick }: PlayerCardProps) {
   const nationality = cleanNationality(player.nationality);
-  const statValue = (value: number) => statsReady ? value : "";
+  const statValue = (value: number) => value;
 
   return (
     <button
