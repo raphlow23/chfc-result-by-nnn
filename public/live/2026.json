@@ -1,0 +1,2735 @@
+{
+  "seasons": [
+    {
+      "id": "2026",
+      "label": "2026 시즌",
+      "teamName": "충북청주FC",
+      "division": "K리그2"
+    },
+    {
+      "id": "2025",
+      "label": "2025 시즌",
+      "teamName": "충북청주FC",
+      "division": "K리그2"
+    },
+    {
+      "id": "2024",
+      "label": "2024 시즌",
+      "teamName": "충북청주FC",
+      "division": "K리그2"
+    },
+    {
+      "id": "2023",
+      "label": "2023 시즌",
+      "teamName": "충북청주FC",
+      "division": "K리그2"
+    }
+  ],
+  "matches": [
+    {
+      "id": "2026-kleague-5",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "5",
+        "homeTeamId": "K37",
+        "awayTeamId": "K29",
+        "roundId": "1"
+      },
+      "date": "2026-03-01",
+      "time": "14:00",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "1R",
+      "homeTeam": "충북청주 FC",
+      "awayTeam": "수원 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K29.png",
+      "homeScore": 1,
+      "awayScore": 4,
+      "stadium": "청주종합운동장",
+      "status": "finished",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-14",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "14",
+        "homeTeamId": "K08",
+        "awayTeamId": "K37",
+        "roundId": "2"
+      },
+      "date": "2026-03-08",
+      "time": "14:00",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "2R",
+      "homeTeam": "성남 FC",
+      "awayTeam": "충북청주 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "homeScore": 2,
+      "awayScore": 2,
+      "stadium": "탄천종합운동장",
+      "status": "finished",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-21",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "21",
+        "homeTeamId": "K20",
+        "awayTeamId": "K37",
+        "roundId": "3"
+      },
+      "date": "2026-03-14",
+      "time": "16:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "3R",
+      "homeTeam": "경남 FC",
+      "awayTeam": "충북청주 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "homeScore": 2,
+      "awayScore": 2,
+      "stadium": "Changwon Football C",
+      "status": "finished",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-29",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "29",
+        "homeTeamId": "K37",
+        "awayTeamId": "K32",
+        "roundId": "4"
+      },
+      "date": "2026-03-21",
+      "time": "16:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "4R",
+      "homeTeam": "충북청주 FC",
+      "awayTeam": "안산 그리너스",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stadium": "청주종합운동장",
+      "status": "finished",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-38",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "38",
+        "homeTeamId": "K37",
+        "awayTeamId": "K06",
+        "roundId": "5"
+      },
+      "date": "2026-03-29",
+      "time": "14:00",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "5R",
+      "homeTeam": "충북청주 FC",
+      "awayTeam": "부산 아이파크",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+      "homeScore": 1,
+      "awayScore": 2,
+      "stadium": "청주종합운동장",
+      "status": "finished",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-46",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "46",
+        "homeTeamId": "K02",
+        "awayTeamId": "K37",
+        "roundId": "6"
+      },
+      "date": "2026-04-05",
+      "time": "14:00",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "6R",
+      "homeTeam": "수원 삼성",
+      "awayTeam": "충북청주 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "stadium": "수원월드컵경기장",
+      "status": "finished",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-54",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "54",
+        "homeTeamId": "K38",
+        "awayTeamId": "K37",
+        "roundId": "7"
+      },
+      "date": "2026-04-12",
+      "time": "14:00",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "7R",
+      "homeTeam": "천안 시티",
+      "awayTeam": "충북청주 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "homeScore": 2,
+      "awayScore": 2,
+      "stadium": "천안종합운동장",
+      "status": "finished",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-60",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "60",
+        "homeTeamId": "K37",
+        "awayTeamId": "K41",
+        "roundId": "8"
+      },
+      "date": "2026-04-18",
+      "time": "16:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "8R",
+      "homeTeam": "충북청주 FC",
+      "awayTeam": "김해 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stadium": "청주종합운동장",
+      "status": "finished",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-71",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "71",
+        "homeTeamId": "K37",
+        "awayTeamId": "K34",
+        "roundId": "9"
+      },
+      "date": "2026-04-26",
+      "time": "16:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "9R",
+      "homeTeam": "충북청주 FC",
+      "awayTeam": "충남아산 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "stadium": "청주종합운동장",
+      "status": "finished",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-77",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "77",
+        "homeTeamId": "K40",
+        "awayTeamId": "K37",
+        "roundId": "10"
+      },
+      "date": "2026-05-03",
+      "time": "16:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "10R",
+      "homeTeam": "파주 프런티어",
+      "awayTeam": "충북청주 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "homeScore": 0,
+      "awayScore": 0,
+      "stadium": "파주스타디움",
+      "status": "finished",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-84",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "84",
+        "homeTeamId": "K37",
+        "awayTeamId": "K36",
+        "roundId": "11"
+      },
+      "date": "2026-05-09",
+      "time": "16:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "11R",
+      "homeTeam": "충북청주 FC",
+      "awayTeam": "김포 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stadium": "청주종합운동장",
+      "status": "finished",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-90",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "90",
+        "homeTeamId": "K07",
+        "awayTeamId": "K37",
+        "roundId": "12"
+      },
+      "date": "2026-05-16",
+      "time": "16:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "12R",
+      "homeTeam": "전남 드래곤즈",
+      "awayTeam": "충북청주 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "homeScore": 2,
+      "awayScore": 2,
+      "stadium": "광양축구전용구장",
+      "status": "finished",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-99",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "99",
+        "homeTeamId": "K37",
+        "awayTeamId": "K39",
+        "roundId": "13"
+      },
+      "date": "2026-05-23",
+      "time": "19:00",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "13R",
+      "homeTeam": "충북청주 FC",
+      "awayTeam": "화성 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "청주종합운동장",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-119",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "119",
+        "homeTeamId": "K31",
+        "awayTeamId": "K37",
+        "roundId": "15"
+      },
+      "date": "2026-06-07",
+      "time": "19:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "15R",
+      "homeTeam": "서울 이랜드",
+      "awayTeam": "충북청주 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K31.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "목동종합운동장",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-121",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "121",
+        "homeTeamId": "K37",
+        "awayTeamId": "K17",
+        "roundId": "16"
+      },
+      "date": "2026-07-04",
+      "time": "19:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "16R",
+      "homeTeam": "충북청주 FC",
+      "awayTeam": "대구 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "청주종합운동장",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-134",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "134",
+        "homeTeamId": "K42",
+        "awayTeamId": "K37",
+        "roundId": "17"
+      },
+      "date": "2026-07-11",
+      "time": "19:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "17R",
+      "homeTeam": "용인 FC",
+      "awayTeam": "충북청주 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "용인미르스타디움",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-143",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "143",
+        "homeTeamId": "K37",
+        "awayTeamId": "K38",
+        "roundId": "18"
+      },
+      "date": "2026-07-19",
+      "time": "19:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "18R",
+      "homeTeam": "충북청주 FC",
+      "awayTeam": "천안 시티",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K38.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "청주종합운동장",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-146",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "146",
+        "homeTeamId": "K41",
+        "awayTeamId": "K37",
+        "roundId": "19"
+      },
+      "date": "2026-07-24",
+      "time": "19:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "19R",
+      "homeTeam": "김해 FC",
+      "awayTeam": "충북청주 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K41.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "김해종합운동장",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-155",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "155",
+        "homeTeamId": "K37",
+        "awayTeamId": "K02",
+        "roundId": "20"
+      },
+      "date": "2026-08-01",
+      "time": "19:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "20R",
+      "homeTeam": "충북청주 FC",
+      "awayTeam": "수원 삼성",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K02.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "청주종합운동장",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-162",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "162",
+        "homeTeamId": "K36",
+        "awayTeamId": "K37",
+        "roundId": "21"
+      },
+      "date": "2026-08-07",
+      "time": "19:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "21R",
+      "homeTeam": "김포 FC",
+      "awayTeam": "충북청주 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K36.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "Gimpo Solteo",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-169",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "169",
+        "homeTeamId": "K37",
+        "awayTeamId": "K07",
+        "roundId": "22"
+      },
+      "date": "2026-08-15",
+      "time": "19:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "22R",
+      "homeTeam": "충북청주 FC",
+      "awayTeam": "전남 드래곤즈",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K07.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "청주종합운동장",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-183",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "183",
+        "homeTeamId": "K37",
+        "awayTeamId": "K20",
+        "roundId": "23"
+      },
+      "date": "2026-08-23",
+      "time": "19:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "23R",
+      "homeTeam": "충북청주 FC",
+      "awayTeam": "경남 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K20.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "청주종합운동장",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-189",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "189",
+        "homeTeamId": "K39",
+        "awayTeamId": "K37",
+        "roundId": "24"
+      },
+      "date": "2026-08-29",
+      "time": "19:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "24R",
+      "homeTeam": "화성 FC",
+      "awayTeam": "충북청주 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "Hwaseong",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-193",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "193",
+        "homeTeamId": "K37",
+        "awayTeamId": "K31",
+        "roundId": "25"
+      },
+      "date": "2026-09-04",
+      "time": "19:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "25R",
+      "homeTeam": "충북청주 FC",
+      "awayTeam": "서울 이랜드",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K31.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "청주종합운동장",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-204",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "204",
+        "homeTeamId": "K34",
+        "awayTeamId": "K37",
+        "roundId": "26"
+      },
+      "date": "2026-09-12",
+      "time": "19:00",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "26R",
+      "homeTeam": "충남아산 FC",
+      "awayTeam": "충북청주 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K34.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "Asan YISoonsin",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-213",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "213",
+        "homeTeamId": "K32",
+        "awayTeamId": "K37",
+        "roundId": "27"
+      },
+      "date": "2026-09-20",
+      "time": "16:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "27R",
+      "homeTeam": "안산 그리너스",
+      "awayTeam": "충북청주 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K32.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "안산와스타디움",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-218",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "218",
+        "homeTeamId": "K37",
+        "awayTeamId": "K08",
+        "roundId": "28"
+      },
+      "date": "2026-10-09",
+      "time": "16:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "28R",
+      "homeTeam": "충북청주 FC",
+      "awayTeam": "성남 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K08.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "청주종합운동장",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-225",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "225",
+        "homeTeamId": "K17",
+        "awayTeamId": "K37",
+        "roundId": "29"
+      },
+      "date": "2026-10-17",
+      "time": "14:00",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "29R",
+      "homeTeam": "대구 FC",
+      "awayTeam": "충북청주 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K17.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "Daegu Forest Arena",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-239",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "239",
+        "homeTeamId": "K37",
+        "awayTeamId": "K42",
+        "roundId": "30"
+      },
+      "date": "2026-10-25",
+      "time": "16:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "30R",
+      "homeTeam": "충북청주 FC",
+      "awayTeam": "용인 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K42.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "청주종합운동장",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-247",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "247",
+        "homeTeamId": "K37",
+        "awayTeamId": "K40",
+        "roundId": "31"
+      },
+      "date": "2026-11-01",
+      "time": "16:30",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "31R",
+      "homeTeam": "충북청주 FC",
+      "awayTeam": "파주 프런티어",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K40.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "청주종합운동장",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-258",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "258",
+        "homeTeamId": "K06",
+        "awayTeamId": "K37",
+        "roundId": "33"
+      },
+      "date": "2026-11-21",
+      "time": "14:00",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "33R",
+      "homeTeam": "부산 아이파크",
+      "awayTeam": "충북청주 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K06.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "Busan",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    },
+    {
+      "id": "2026-kleague-272",
+      "seasonId": "2026",
+      "kLeague": {
+        "year": "2026",
+        "leagueId": "2",
+        "meetSeq": "2",
+        "gameId": "272",
+        "homeTeamId": "K29",
+        "awayTeamId": "K37",
+        "roundId": "34"
+      },
+      "date": "2026-11-29",
+      "time": "00:00",
+      "competition": "하나은행 K리그2 2026",
+      "competitionType": "league",
+      "round": "34R",
+      "homeTeam": "수원 FC",
+      "awayTeam": "충북청주 FC",
+      "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K29.png",
+      "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
+      "homeScore": null,
+      "awayScore": null,
+      "stadium": "Suwon Stadium",
+      "status": "scheduled",
+      "scorers": [],
+      "assists": [],
+      "yellowCards": [],
+      "redCards": [],
+      "startingLineup": [],
+      "substitutes": [],
+      "stats": {},
+      "articleLinks": [],
+      "memo": "K리그 공식 데이터"
+    }
+  ],
+  "players": [
+    {
+      "id": "2026-kleague-player-20140078",
+      "seasonId": "2026",
+      "number": "1",
+      "name": "노동건",
+      "position": "GK",
+      "nationality": "Korea",
+      "appearances": 5,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 1,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 5,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "수원",
+        "포항",
+        "수원FC",
+        "서울E"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20190122",
+      "seasonId": "2026",
+      "number": "21",
+      "name": "조성훈",
+      "position": "GK",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "포항",
+        "수원",
+        "안산"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20220085",
+      "seasonId": "2026",
+      "number": "23",
+      "name": "조성빈",
+      "position": "GK",
+      "nationality": "Korea",
+      "appearances": 9,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 9,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "전남",
+        "제주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20200076",
+      "seasonId": "2026",
+      "number": "4",
+      "name": "조윤성",
+      "position": "DF",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "강원",
+        "충남아산",
+        "수원"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20220158",
+      "seasonId": "2026",
+      "number": "8",
+      "name": "박건우",
+      "position": "DF",
+      "nationality": "Korea",
+      "appearances": 11,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 4,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 11,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "포항",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20160075",
+      "seasonId": "2026",
+      "number": "18",
+      "name": "조주영",
+      "position": "DF",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 3,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "광주",
+        "인천",
+        "충남아산"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20090093",
+      "seasonId": "2026",
+      "number": "20",
+      "name": "윤석영",
+      "position": "DF",
+      "nationality": "Korea",
+      "appearances": 6,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 1,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 6,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "전남",
+        "서울",
+        "강원",
+        "부산",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20260195",
+      "seasonId": "2026",
+      "number": "25",
+      "name": "반데이라",
+      "position": "DF",
+      "nationality": "Portugal",
+      "appearances": 12,
+      "goals": 0,
+      "assists": 1,
+      "cleanSheets": 0,
+      "yellowCards": 2,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 0,
+          "assists": 1
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20200111",
+      "seasonId": "2026",
+      "number": "41",
+      "name": "강의빈",
+      "position": "DF",
+      "nationality": "Korea",
+      "appearances": 7,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 7,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "경남",
+        "부천",
+        "성남"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20200080",
+      "seasonId": "2026",
+      "number": "66",
+      "name": "이강한",
+      "position": "DF",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 1,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "강원",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20180017",
+      "seasonId": "2026",
+      "number": "99",
+      "name": "이창훈",
+      "position": "DF",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "안산",
+        "충남아산",
+        "전남",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20140040",
+      "seasonId": "2026",
+      "number": "5",
+      "name": "김선민",
+      "position": "MF",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 1,
+      "assists": 1,
+      "cleanSheets": 0,
+      "yellowCards": 1,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 1,
+          "assists": 1
+        }
+      ],
+      "previousClubs": [
+        "울산",
+        "안양",
+        "대전",
+        "대구",
+        "아산",
+        "서울E",
+        "수원FC",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20260193",
+      "seasonId": "2026",
+      "number": "10",
+      "name": "웰치",
+      "position": "MF",
+      "nationality": "United Kingdom",
+      "appearances": 7,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 7,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20210084",
+      "seasonId": "2026",
+      "number": "16",
+      "name": "허승찬",
+      "position": "MF",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 1,
+      "assists": 1,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 1,
+          "assists": 1
+        }
+      ],
+      "previousClubs": [
+        "부산",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20240149",
+      "seasonId": "2026",
+      "number": "27",
+      "name": "민지훈",
+      "position": "MF",
+      "nationality": "Korea",
+      "appearances": 10,
+      "goals": 0,
+      "assists": 1,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 10,
+          "goals": 0,
+          "assists": 1
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20230018",
+      "seasonId": "2026",
+      "number": "42",
+      "name": "정진우",
+      "position": "MF",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20260197",
+      "seasonId": "2026",
+      "number": "47",
+      "name": "주나무",
+      "position": "MF",
+      "nationality": "Korea",
+      "appearances": 3,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 3,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20260191",
+      "seasonId": "2026",
+      "number": "7",
+      "name": "이라클리",
+      "position": "FW",
+      "nationality": "Georgia",
+      "appearances": 9,
+      "goals": 1,
+      "assists": 1,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 9,
+          "goals": 1,
+          "assists": 1
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20260192",
+      "seasonId": "2026",
+      "number": "9",
+      "name": "엔조",
+      "position": "FW",
+      "nationality": "Brazil",
+      "appearances": 7,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 1,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 7,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20260194",
+      "seasonId": "2026",
+      "number": "11",
+      "name": "가르시아",
+      "position": "FW",
+      "nationality": "Colombia",
+      "appearances": 12,
+      "goals": 4,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 4,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20230162",
+      "seasonId": "2026",
+      "number": "13",
+      "name": "이종언",
+      "position": "FW",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 3,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 2,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 3,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "경남"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20220151",
+      "seasonId": "2026",
+      "number": "14",
+      "name": "서재원",
+      "position": "FW",
+      "nationality": "Korea",
+      "appearances": 9,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 9,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "경남",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20220102",
+      "seasonId": "2026",
+      "number": "19",
+      "name": "송창석",
+      "position": "FW",
+      "nationality": "Korea",
+      "appearances": 9,
+      "goals": 1,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 9,
+          "goals": 1,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "대전",
+        "김포",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20250211",
+      "seasonId": "2026",
+      "number": "22",
+      "name": "양영빈",
+      "position": "FW",
+      "nationality": "Korea",
+      "appearances": 4,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 1,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 4,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20260196",
+      "seasonId": "2026",
+      "number": "37",
+      "name": "이윤환",
+      "position": "FW",
+      "nationality": "Korea",
+      "appearances": 1,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 1,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20230065",
+      "seasonId": "2026",
+      "number": "70",
+      "name": "이동진",
+      "position": "FW",
+      "nationality": "Korea",
+      "appearances": 1,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 1,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "강원"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20250327",
+      "seasonId": "2026",
+      "number": "77",
+      "name": "홍석준",
+      "position": "FW",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 2,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "충북청주"
+      ],
+      "nextClubs": []
+    }
+  ],
+  "squads": {
+    "2026": [
+      "2026-kleague-player-20140078",
+      "2026-kleague-player-20190122",
+      "2026-kleague-player-20220085",
+      "2026-kleague-player-20200076",
+      "2026-kleague-player-20220158",
+      "2026-kleague-player-20160075",
+      "2026-kleague-player-20090093",
+      "2026-kleague-player-20260195",
+      "2026-kleague-player-20200111",
+      "2026-kleague-player-20200080",
+      "2026-kleague-player-20180017",
+      "2026-kleague-player-20140040",
+      "2026-kleague-player-20260193",
+      "2026-kleague-player-20210084",
+      "2026-kleague-player-20240149",
+      "2026-kleague-player-20230018",
+      "2026-kleague-player-20260197",
+      "2026-kleague-player-20260191",
+      "2026-kleague-player-20260192",
+      "2026-kleague-player-20260194",
+      "2026-kleague-player-20230162",
+      "2026-kleague-player-20220151",
+      "2026-kleague-player-20220102",
+      "2026-kleague-player-20250211",
+      "2026-kleague-player-20260196",
+      "2026-kleague-player-20230065",
+      "2026-kleague-player-20250327"
+    ]
+  },
+  "standings": [
+    {
+      "seasonId": "2026",
+      "rank": "15위",
+      "wins": 0,
+      "draws": 10,
+      "losses": 2,
+      "goalsFor": 13,
+      "goalsAgainst": 17,
+      "points": 10,
+      "homeRecord": "0승 4무 2패",
+      "awayRecord": "0승 6무 0패",
+      "longestWinningRun": "0연승",
+      "longestWinlessRun": "12경기",
+      "highestScoringMatch": "충북청주 FC 1-4 수원 FC"
+    }
+  ],
+  "playerStats": [
+    {
+      "id": "2026-kleague-player-20140078",
+      "seasonId": "2026",
+      "number": "1",
+      "name": "노동건",
+      "position": "GK",
+      "nationality": "Korea",
+      "appearances": 5,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 1,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 5,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "수원",
+        "포항",
+        "수원FC",
+        "서울E"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20190122",
+      "seasonId": "2026",
+      "number": "21",
+      "name": "조성훈",
+      "position": "GK",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "포항",
+        "수원",
+        "안산"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20220085",
+      "seasonId": "2026",
+      "number": "23",
+      "name": "조성빈",
+      "position": "GK",
+      "nationality": "Korea",
+      "appearances": 9,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 9,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "전남",
+        "제주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20200076",
+      "seasonId": "2026",
+      "number": "4",
+      "name": "조윤성",
+      "position": "DF",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "강원",
+        "충남아산",
+        "수원"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20220158",
+      "seasonId": "2026",
+      "number": "8",
+      "name": "박건우",
+      "position": "DF",
+      "nationality": "Korea",
+      "appearances": 11,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 4,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 11,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "포항",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20160075",
+      "seasonId": "2026",
+      "number": "18",
+      "name": "조주영",
+      "position": "DF",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 3,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "광주",
+        "인천",
+        "충남아산"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20090093",
+      "seasonId": "2026",
+      "number": "20",
+      "name": "윤석영",
+      "position": "DF",
+      "nationality": "Korea",
+      "appearances": 6,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 1,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 6,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "전남",
+        "서울",
+        "강원",
+        "부산",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20260195",
+      "seasonId": "2026",
+      "number": "25",
+      "name": "반데이라",
+      "position": "DF",
+      "nationality": "Portugal",
+      "appearances": 12,
+      "goals": 0,
+      "assists": 1,
+      "cleanSheets": 0,
+      "yellowCards": 2,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 0,
+          "assists": 1
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20200111",
+      "seasonId": "2026",
+      "number": "41",
+      "name": "강의빈",
+      "position": "DF",
+      "nationality": "Korea",
+      "appearances": 7,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 7,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "경남",
+        "부천",
+        "성남"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20200080",
+      "seasonId": "2026",
+      "number": "66",
+      "name": "이강한",
+      "position": "DF",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 1,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "강원",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20180017",
+      "seasonId": "2026",
+      "number": "99",
+      "name": "이창훈",
+      "position": "DF",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "안산",
+        "충남아산",
+        "전남",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20140040",
+      "seasonId": "2026",
+      "number": "5",
+      "name": "김선민",
+      "position": "MF",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 1,
+      "assists": 1,
+      "cleanSheets": 0,
+      "yellowCards": 1,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 1,
+          "assists": 1
+        }
+      ],
+      "previousClubs": [
+        "울산",
+        "안양",
+        "대전",
+        "대구",
+        "아산",
+        "서울E",
+        "수원FC",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20260193",
+      "seasonId": "2026",
+      "number": "10",
+      "name": "웰치",
+      "position": "MF",
+      "nationality": "United Kingdom",
+      "appearances": 7,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 7,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20210084",
+      "seasonId": "2026",
+      "number": "16",
+      "name": "허승찬",
+      "position": "MF",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 1,
+      "assists": 1,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 1,
+          "assists": 1
+        }
+      ],
+      "previousClubs": [
+        "부산",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20240149",
+      "seasonId": "2026",
+      "number": "27",
+      "name": "민지훈",
+      "position": "MF",
+      "nationality": "Korea",
+      "appearances": 10,
+      "goals": 0,
+      "assists": 1,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 10,
+          "goals": 0,
+          "assists": 1
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20230018",
+      "seasonId": "2026",
+      "number": "42",
+      "name": "정진우",
+      "position": "MF",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20260197",
+      "seasonId": "2026",
+      "number": "47",
+      "name": "주나무",
+      "position": "MF",
+      "nationality": "Korea",
+      "appearances": 3,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 3,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20260191",
+      "seasonId": "2026",
+      "number": "7",
+      "name": "이라클리",
+      "position": "FW",
+      "nationality": "Georgia",
+      "appearances": 9,
+      "goals": 1,
+      "assists": 1,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 9,
+          "goals": 1,
+          "assists": 1
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20260192",
+      "seasonId": "2026",
+      "number": "9",
+      "name": "엔조",
+      "position": "FW",
+      "nationality": "Brazil",
+      "appearances": 7,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 1,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 7,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20260194",
+      "seasonId": "2026",
+      "number": "11",
+      "name": "가르시아",
+      "position": "FW",
+      "nationality": "Colombia",
+      "appearances": 12,
+      "goals": 4,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 4,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20230162",
+      "seasonId": "2026",
+      "number": "13",
+      "name": "이종언",
+      "position": "FW",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 3,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 2,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 3,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "경남"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20220151",
+      "seasonId": "2026",
+      "number": "14",
+      "name": "서재원",
+      "position": "FW",
+      "nationality": "Korea",
+      "appearances": 9,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 9,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "경남",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20220102",
+      "seasonId": "2026",
+      "number": "19",
+      "name": "송창석",
+      "position": "FW",
+      "nationality": "Korea",
+      "appearances": 9,
+      "goals": 1,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 9,
+          "goals": 1,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "대전",
+        "김포",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20250211",
+      "seasonId": "2026",
+      "number": "22",
+      "name": "양영빈",
+      "position": "FW",
+      "nationality": "Korea",
+      "appearances": 4,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 1,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 4,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20260196",
+      "seasonId": "2026",
+      "number": "37",
+      "name": "이윤환",
+      "position": "FW",
+      "nationality": "Korea",
+      "appearances": 1,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 1,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20230065",
+      "seasonId": "2026",
+      "number": "70",
+      "name": "이동진",
+      "position": "FW",
+      "nationality": "Korea",
+      "appearances": 1,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 1,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "강원"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20250327",
+      "seasonId": "2026",
+      "number": "77",
+      "name": "홍석준",
+      "position": "FW",
+      "nationality": "Korea",
+      "appearances": 12,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 2,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 12,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
+        "충북청주"
+      ],
+      "nextClubs": []
+    }
+  ],
+  "coaches": [
+    {
+      "id": "2026-coach-1",
+      "seasonId": "2026",
+      "name": "마누엘 레이스",
+      "role": "감독",
+      "period": "2026"
+    }
+  ],
+  "historyEvents": [],
+  "rankHistory": [
+    {
+      "seasonId": "2026",
+      "matchId": "2026-kleague-5",
+      "round": "1R",
+      "date": "2026-03-01",
+      "rank": 14
+    },
+    {
+      "seasonId": "2026",
+      "matchId": "2026-kleague-14",
+      "round": "2R",
+      "date": "2026-03-08",
+      "rank": 14
+    },
+    {
+      "seasonId": "2026",
+      "matchId": "2026-kleague-21",
+      "round": "3R",
+      "date": "2026-03-14",
+      "rank": 14
+    },
+    {
+      "seasonId": "2026",
+      "matchId": "2026-kleague-29",
+      "round": "4R",
+      "date": "2026-03-21",
+      "rank": 14
+    },
+    {
+      "seasonId": "2026",
+      "matchId": "2026-kleague-38",
+      "round": "5R",
+      "date": "2026-03-29",
+      "rank": 14
+    },
+    {
+      "seasonId": "2026",
+      "matchId": "2026-kleague-46",
+      "round": "6R",
+      "date": "2026-04-05",
+      "rank": 15
+    },
+    {
+      "seasonId": "2026",
+      "matchId": "2026-kleague-54",
+      "round": "7R",
+      "date": "2026-04-12",
+      "rank": 13
+    },
+    {
+      "seasonId": "2026",
+      "matchId": "2026-kleague-60",
+      "round": "8R",
+      "date": "2026-04-18",
+      "rank": 13
+    },
+    {
+      "seasonId": "2026",
+      "matchId": "2026-kleague-71",
+      "round": "9R",
+      "date": "2026-04-26",
+      "rank": 14
+    },
+    {
+      "seasonId": "2026",
+      "matchId": "2026-kleague-77",
+      "round": "10R",
+      "date": "2026-05-03",
+      "rank": 13
+    },
+    {
+      "seasonId": "2026",
+      "matchId": "2026-kleague-84",
+      "round": "11R",
+      "date": "2026-05-09",
+      "rank": 15
+    },
+    {
+      "seasonId": "2026",
+      "matchId": "2026-kleague-90",
+      "round": "12R",
+      "date": "2026-05-16",
+      "rank": 15
+    }
+  ],
+  "meta": {
+    "season": "2026",
+    "source": "K League automatic sync",
+    "updatedAt": "2026-05-18T06:25:00.224Z"
+  }
+}
