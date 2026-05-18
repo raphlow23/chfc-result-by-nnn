@@ -674,6 +674,69 @@ export async function fetchPlayerDetails(player: Player): Promise<Player> {
 }
 
 export async function fetchSeasonPlayerStats(season: string, players: Player[]): Promise<Player[]> {
+  const mergeFromArchive = async () => {
+    const archiveData = await fetch(`/api/chfc-data?season=${encodeURIComponent(season)}&mode=full&_=${Date.now()}`, {
+      cache: "no-store"
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("player archive unavailable");
+        return response.json() as Promise<Partial<ArchiveData>>;
+      })
+      .catch(() => null);
+
+    const sourcePlayers = archiveData?.playerStats?.length ? archiveData.playerStats : archiveData?.players;
+    const archivePlayers = Array.isArray(sourcePlayers) ? sourcePlayers : [];
+    if (!archivePlayers.length) {
+      throw new Error("player stats unavailable");
+    }
+
+    const playerIds = archivePlayers
+      .map((player) => player.id.match(/kleague-player-(.+)$/)?.[1] || "")
+      .filter(Boolean);
+
+    const statData = playerIds.length
+      ? await fetch(`/api/player-stats?season=${encodeURIComponent(season)}&playerIds=${encodeURIComponent(playerIds.join(","))}&_=${Date.now()}`, {
+          cache: "no-store"
+        })
+          .then((response) => {
+            if (!response.ok) throw new Error("player stats unavailable");
+            return response.json() as Promise<{ players?: Array<Partial<Player> & { playerId?: string }> }>;
+          })
+          .catch(() => null)
+      : null;
+
+    const statsById = new Map((statData?.players || []).map((row) => [row.playerId || "", row]));
+    const enrichedPlayers = archivePlayers.map((player) => {
+      const playerId = player.id.match(/kleague-player-(.+)$/)?.[1] || "";
+      const stats = statsById.get(playerId);
+      if (!stats) return player;
+
+      const appearances = Math.max(Number(player.appearances || 0), Number(stats.appearances || 0));
+      const goals = keepUsefulNumber(stats.goals, player.goals);
+      const assists = keepUsefulNumber(stats.assists, player.assists);
+
+      return {
+        ...player,
+        appearances,
+        goals,
+        assists,
+        cleanSheets: keepUsefulNumber(stats.cleanSheets, player.cleanSheets),
+        yellowCards: keepUsefulNumber(stats.yellowCards, player.yellowCards),
+        redCards: keepUsefulNumber(stats.redCards, player.redCards),
+        seasonRecords: [
+          {
+            season,
+            appearances,
+            goals,
+            assists
+          }
+        ]
+      };
+    });
+
+    return mergePlayerStatsByName(players, enrichedPlayers, season);
+  };
+
   const rows = players
     .map((player) => ({
       player,
@@ -682,7 +745,7 @@ export async function fetchSeasonPlayerStats(season: string, players: Player[]):
     .filter((row) => row.playerId);
 
   if (!rows.length) {
-    return players;
+    return mergeFromArchive();
   }
 
   const apiData = await fetch(`/api/player-stats?season=${encodeURIComponent(season)}&playerIds=${encodeURIComponent(rows.map((row) => row.playerId).join(","))}&_=${Date.now()}`, {
@@ -693,6 +756,11 @@ export async function fetchSeasonPlayerStats(season: string, players: Player[]):
       return response.json() as Promise<{ players?: Array<Partial<Player> & { playerId?: string }> }>;
     })
     .catch(() => null);
+
+  if (!apiData?.players?.length) {
+    return mergeFromArchive();
+  }
+
   const statsById = new Map((apiData?.players || []).map((row) => [row.playerId || "", row]));
 
   return players.map((player) => {
@@ -716,6 +784,56 @@ export async function fetchSeasonPlayerStats(season: string, players: Player[]):
           assists: keepUsefulNumber(stats.assists, player.assists)
         }
       ]
+    };
+  });
+}
+
+function mergePlayerStatsByName(players: Player[], archivePlayers: Player[], season: string) {
+  const archiveByName = new Map(
+    archivePlayers
+      .filter((player) => normalizePlayerName(player.name))
+      .map((player) => [normalizePlayerName(player.name), player])
+  );
+
+  return players.map((player) => {
+    const stats = archiveByName.get(normalizePlayerName(player.name));
+    if (!stats) return player;
+
+    const appearances = Math.max(Number(player.appearances || 0), Number(stats.appearances || 0));
+    const goals = keepUsefulNumber(stats.goals, player.goals);
+    const assists = keepUsefulNumber(stats.assists, player.assists);
+    const cleanSheets = keepUsefulNumber(stats.cleanSheets, player.cleanSheets);
+    const yellowCards = keepUsefulNumber(stats.yellowCards, player.yellowCards);
+    const redCards = keepUsefulNumber(stats.redCards, player.redCards);
+
+    return {
+      ...player,
+      id: stats.id || player.id,
+      number: stats.number || player.number,
+      position: stats.position || player.position,
+      nationality: toKoreanNationality(stats.nationality || player.nationality),
+      birthDate: stats.birthDate || player.birthDate,
+      height: stats.height || player.height,
+      weight: stats.weight || player.weight,
+      joinedYear: stats.joinedYear || player.joinedYear,
+      previousClubs: stats.previousClubs?.length ? stats.previousClubs : player.previousClubs,
+      nextClubs: stats.nextClubs?.length ? stats.nextClubs : player.nextClubs,
+      appearances,
+      goals,
+      assists,
+      cleanSheets,
+      yellowCards,
+      redCards,
+      seasonRecords: stats.seasonRecords?.length
+        ? stats.seasonRecords
+        : [
+            {
+              season,
+              appearances,
+              goals,
+              assists
+            }
+          ]
     };
   });
 }
