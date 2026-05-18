@@ -1,7 +1,7 @@
 import type { AppTab } from "../types";
 
 export const appConfig = {
-  appName: "CHFC SEASON RECORD BY ULTRAS NNN",
+  appName: "SEASON",
   teamName: "충북청주FC",
   headerLabel: "충북청주 FC",
   appSubtitle: "시즌별 기록 아카이브",
