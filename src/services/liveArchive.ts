@@ -659,10 +659,10 @@ export async function fetchPlayerDetails(player: Player): Promise<Player> {
   return {
     ...player,
     ...apiDetails,
-    name: hasKorean(player.name) ? player.name : apiDetails.name || player.name,
+    name: player.name || apiDetails.name || "",
     number: apiDetails.number || player.number,
     position: apiDetails.position || player.position,
-    nationality: apiDetails.nationality || player.nationality,
+    nationality: toKoreanNationality(apiDetails.nationality || player.nationality),
     birthDate: apiDetails.birthDate || player.birthDate,
     height: apiDetails.height || player.height,
     weight: apiDetails.weight || player.weight,
@@ -742,6 +742,23 @@ function normalizePlayerName(value = "") {
     .replace(/\s+/g, "")
     .trim()
     .toUpperCase();
+}
+
+function toKoreanNationality(value = "") {
+  const text = String(value || "").trim();
+  const upper = text.toUpperCase();
+  const map: Record<string, string> = {
+    KOREA: "대한민국",
+    "REPUBLIC OF KOREA": "대한민국",
+    BRAZIL: "브라질",
+    JAPAN: "일본",
+    GEORGIA: "조지아",
+    FRANCE: "프랑스",
+    COLOMBIA: "콜롬비아",
+    "NEW ZEALAND": "뉴질랜드"
+  };
+
+  return map[upper] || text;
 }
 
 function keepUsefulNumber(nextValue: number | undefined, currentValue: number | undefined) {
