@@ -635,7 +635,7 @@ export async function fetchPlayerDetails(player: Player): Promise<Player> {
         return response.json() as Promise<{ players?: Player[] }>;
       })
       .catch(() => null);
-    apiPlayer = (seasonData?.players || []).find((row) => normalizePlayerName(row.name) === normalizePlayerName(player.name));
+    apiPlayer = (seasonData?.players || []).find((row) => normalizePlayerName(row.name) === normalizePlayerName(player.name) || getPlayerNameKey(row.name) === getPlayerNameKey(player.name));
     playerId = apiPlayer?.id?.match(/kleague-player-(.+)$/)?.[1] || "";
 
     if (!playerId) {
@@ -793,12 +793,12 @@ export async function fetchSeasonPlayerStats(season: string, players: Player[]):
 function mergePlayerStatsByName(players: Player[], archivePlayers: Player[], season: string) {
   const archiveByName = new Map(
     archivePlayers
-      .filter((player) => normalizePlayerName(player.name))
-      .map((player) => [normalizePlayerName(player.name), player])
+      .filter((player) => getPlayerNameKey(player.name))
+      .map((player) => [getPlayerNameKey(player.name), player])
   );
 
   return players.map((player) => {
-    const stats = archiveByName.get(normalizePlayerName(player.name));
+    const stats = archiveByName.get(getPlayerNameKey(player.name));
     if (!stats) return player;
 
     const appearances = Math.max(Number(player.appearances || 0), Number(stats.appearances || 0));
@@ -904,6 +904,18 @@ function normalizePlayerName(value = "") {
     .replace(/\s+/g, "")
     .trim()
     .toUpperCase();
+}
+
+const cheongjuPlayerNameAliases: Record<string, string> = {
+  DONGWONLEE: "이동원",
+  LEEDONGWON: "이동원",
+  LIMJUNYOUNG: "임준영",
+  JUNYOUNGLIM: "임준영"
+};
+
+function getPlayerNameKey(value = "") {
+  const normalized = normalizePlayerName(value);
+  return normalizePlayerName(cheongjuPlayerNameAliases[normalized] || value);
 }
 
 function toKoreanNationality(value = "") {

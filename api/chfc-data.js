@@ -593,6 +593,35 @@ function extractKLeagueEntryPlayers(html = "", teamId = "") {
     .filter((player) => player.playerId && player.name && player.name.toLowerCase() !== "manager");
 }
 
+function extractKLeagueActiveRosterPlayers(html = "", teamId = "") {
+  if (!html || !teamId) return [];
+
+  const rows = [];
+  const seen = new Set();
+  const playerBlocks = [...html.matchAll(/playerDetailPop\('([^']+)'\s*,\s*'([^']+)'\)([\s\S]{0,1400}?)(?=playerDetailPop\('|<\/li>|<\/div>\s*<div|$)/g)];
+
+  playerBlocks.forEach((match) => {
+    if (match[1] !== teamId || seen.has(match[2])) return;
+
+    const text = stripHtml(match[3]);
+    const noMatch = text.match(/No\.?\s*([0-9]+)/i);
+    const nameMatch = text.match(/(?:^|\s)([가-힣A-Za-z][가-힣A-Za-z\s.'-]*?)\s+(?:충북청주|Chungbuk Cheongju)/i);
+    const name = (nameMatch?.[1] || "").replace(/^Image\s*/i, "").trim();
+
+    if (!name || /Manager|Coach|코치|감독|피지컬|전력분석/i.test(text)) return;
+
+    seen.add(match[2]);
+    rows.push({
+      playerId: match[2],
+      number: noMatch?.[1] || "",
+      position: "",
+      name
+    });
+  });
+
+  return rows;
+}
+
 async function fetchKLeaguePlayerProfile({ season, meetSeq, gameId, teamId, playerId }) {
   if (!season || !meetSeq || !gameId || !teamId || !playerId) return null;
 
@@ -727,9 +756,24 @@ async function getKLeaguePlayersFromMatches(schedules, season) {
     .filter((item) => item.homeTeam === CHEONGJU_TEAM_ID || item.awayTeam === CHEONGJU_TEAM_ID)
     .sort((a, b) => `${a.gameDate} ${a.gameTime}`.localeCompare(`${b.gameDate} ${b.gameTime}`));
 
-  if (!cheongjuMatches.length) return [];
-
   const playerMap = new Map();
+  const rosterHtml = await fetchKLeagueHtml(`${KLEAGUE_ORIGIN}/player.do?leagueId=2&teamId=${CHEONGJU_TEAM_ID}&type=active`).catch(() => "");
+  const activeRosterPlayers = extractKLeagueActiveRosterPlayers(rosterHtml, CHEONGJU_TEAM_ID);
+
+  activeRosterPlayers.forEach((row) => {
+    playerMap.set(row.playerId, {
+      playerId: row.playerId,
+      name: row.name,
+      number: row.number,
+      position: row.position,
+      appearances: 0,
+      firstContext: null,
+      seenMatches: new Set()
+    });
+  });
+
+  if (!cheongjuMatches.length && !playerMap.size) return [];
+
   const rosterSourceMatches = cheongjuMatches.length > 24
     ? [...cheongjuMatches.slice(0, 12), ...cheongjuMatches.slice(-12)]
     : cheongjuMatches;
@@ -761,6 +805,16 @@ async function getKLeaguePlayersFromMatches(schedules, season) {
         seenMatches: new Set()
       };
 
+      if (!existing.firstContext) {
+        existing.firstContext = {
+          season,
+          meetSeq,
+          gameId,
+          teamId: CHEONGJU_TEAM_ID,
+          playerId: row.playerId
+        };
+      }
+
       if (!existing.seenMatches.has(gameId)) {
         existing.seenMatches.add(gameId);
         existing.appearances += 1;
@@ -776,7 +830,7 @@ async function getKLeaguePlayersFromMatches(schedules, season) {
   const rows = [...playerMap.values()];
   const resolvedRows = await mapLimit(rows, 5, async (row) => {
     const [profile, detailPage] = await Promise.all([
-      fetchKLeaguePlayerProfile(row.firstContext),
+      row.firstContext ? fetchKLeaguePlayerProfile(row.firstContext) : null,
       fetchKLeaguePlayerDetailPage(row.playerId, season)
     ]);
     const profileName = profile?.name || "";
@@ -826,6 +880,18 @@ function normalizePlayerName(value = "") {
     .replace(/\s+/g, " ")
     .trim()
     .toUpperCase();
+}
+
+const cheongjuPlayerNameAliases = {
+  "DONGWON LEE": "이동원",
+  "LEE DONGWON": "이동원",
+  "LIM JUNYOUNG": "임준영",
+  "JUNYOUNG LIM": "임준영"
+};
+
+function playerNameKey(value = "") {
+  const normalized = normalizePlayerName(value);
+  return normalizePlayerName(cheongjuPlayerNameAliases[normalized] || value);
 }
 
 function parseKLeaguePlayerRankPage(html = "", season = "") {
@@ -886,10 +952,10 @@ async function getKLeaguePlayerStats(season, leagueId = KLEAGUE_LEAGUE_ID) {
 function mergeKLeaguePlayerStats(players, stats, season) {
   if (!stats.length) return players;
 
-  const statsByName = new Map(stats.map((row) => [normalizePlayerName(row.name), row]));
+  const statsByName = new Map(stats.map((row) => [playerNameKey(row.name), row]));
 
   return players.map((player) => {
-    const stat = statsByName.get(normalizePlayerName(player.name));
+    const stat = statsByName.get(playerNameKey(player.name));
     if (!stat) return player;
 
     return {
