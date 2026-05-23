@@ -467,10 +467,10 @@
       "awayTeam": "화성 FC",
       "homeLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K37.png",
       "awayLogoUrl": "https://www.kleague.com/assets/images/emblem/emblem_K39.png",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 2,
+      "awayScore": 3,
       "stadium": "청주종합운동장",
-      "status": "scheduled",
+      "status": "finished",
       "scorers": [],
       "assists": [],
       "yellowCards": [],
@@ -1184,7 +1184,7 @@
       "name": "조성훈",
       "position": "GK",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -1193,7 +1193,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 0,
           "assists": 0
         }
@@ -1212,7 +1212,7 @@
       "name": "조성빈",
       "position": "GK",
       "nationality": "Korea",
-      "appearances": 9,
+      "appearances": 10,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -1221,7 +1221,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 9,
+          "appearances": 10,
           "goals": 0,
           "assists": 0
         }
@@ -1239,7 +1239,7 @@
       "name": "조윤성",
       "position": "DF",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -1248,7 +1248,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 0,
           "assists": 0
         }
@@ -1267,7 +1267,7 @@
       "name": "박건우",
       "position": "DF",
       "nationality": "Korea",
-      "appearances": 11,
+      "appearances": 12,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -1276,7 +1276,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 11,
+          "appearances": 12,
           "goals": 0,
           "assists": 0
         }
@@ -1294,7 +1294,7 @@
       "name": "조주영",
       "position": "DF",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -1303,7 +1303,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 0,
           "assists": 0
         }
@@ -1352,18 +1352,18 @@
       "name": "반데이라",
       "position": "DF",
       "nationality": "Portugal",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 0,
-      "assists": 1,
+      "assists": 2,
       "cleanSheets": 0,
-      "yellowCards": 2,
+      "yellowCards": 3,
       "redCards": 0,
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 0,
-          "assists": 1
+          "assists": 2
         }
       ],
       "previousClubs": [],
@@ -1376,7 +1376,7 @@
       "name": "강의빈",
       "position": "DF",
       "nationality": "Korea",
-      "appearances": 7,
+      "appearances": 8,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -1385,7 +1385,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 7,
+          "appearances": 8,
           "goals": 0,
           "assists": 0
         }
@@ -1404,7 +1404,7 @@
       "name": "이강한",
       "position": "DF",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -1413,7 +1413,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 0,
           "assists": 0
         }
@@ -1431,7 +1431,7 @@
       "name": "이창훈",
       "position": "DF",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -1440,7 +1440,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 0,
           "assists": 0
         }
@@ -1460,7 +1460,7 @@
       "name": "김선민",
       "position": "MF",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 1,
       "assists": 1,
       "cleanSheets": 0,
@@ -1469,7 +1469,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 1,
           "assists": 1
         }
@@ -1493,7 +1493,7 @@
       "name": "웰치",
       "position": "MF",
       "nationality": "United Kingdom",
-      "appearances": 7,
+      "appearances": 8,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -1502,7 +1502,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 7,
+          "appearances": 8,
           "goals": 0,
           "assists": 0
         }
@@ -1517,7 +1517,7 @@
       "name": "허승찬",
       "position": "MF",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 1,
       "assists": 1,
       "cleanSheets": 0,
@@ -1526,7 +1526,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 1,
           "assists": 1
         }
@@ -1568,7 +1568,7 @@
       "name": "정진우",
       "position": "MF",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -1577,7 +1577,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 0,
           "assists": 0
         }
@@ -1616,7 +1616,7 @@
       "name": "이라클리",
       "position": "FW",
       "nationality": "Georgia",
-      "appearances": 9,
+      "appearances": 10,
       "goals": 1,
       "assists": 1,
       "cleanSheets": 0,
@@ -1625,7 +1625,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 9,
+          "appearances": 10,
           "goals": 1,
           "assists": 1
         }
@@ -1664,8 +1664,8 @@
       "name": "가르시아",
       "position": "FW",
       "nationality": "Colombia",
-      "appearances": 12,
-      "goals": 4,
+      "appearances": 13,
+      "goals": 5,
       "assists": 0,
       "cleanSheets": 0,
       "yellowCards": 0,
@@ -1673,8 +1673,8 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
-          "goals": 4,
+          "appearances": 13,
+          "goals": 5,
           "assists": 0
         }
       ],
@@ -1714,18 +1714,18 @@
       "name": "서재원",
       "position": "FW",
       "nationality": "Korea",
-      "appearances": 9,
+      "appearances": 10,
       "goals": 0,
-      "assists": 0,
+      "assists": 1,
       "cleanSheets": 0,
       "yellowCards": 0,
       "redCards": 0,
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 9,
+          "appearances": 10,
           "goals": 0,
-          "assists": 0
+          "assists": 1
         }
       ],
       "previousClubs": [
@@ -1741,7 +1741,7 @@
       "name": "송창석",
       "position": "FW",
       "nationality": "Korea",
-      "appearances": 9,
+      "appearances": 10,
       "goals": 1,
       "assists": 0,
       "cleanSheets": 0,
@@ -1750,7 +1750,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 9,
+          "appearances": 10,
           "goals": 1,
           "assists": 0
         }
@@ -1795,7 +1795,7 @@
       "name": "이윤환",
       "position": "FW",
       "nationality": "Korea",
-      "appearances": 1,
+      "appearances": 2,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -1804,7 +1804,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 1,
+          "appearances": 2,
           "goals": 0,
           "assists": 0
         }
@@ -1819,7 +1819,7 @@
       "name": "이동진",
       "position": "FW",
       "nationality": "Korea",
-      "appearances": 1,
+      "appearances": 2,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -1828,7 +1828,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 1,
+          "appearances": 2,
           "goals": 0,
           "assists": 0
         }
@@ -1845,7 +1845,7 @@
       "name": "홍석준",
       "position": "FW",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -1854,7 +1854,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 0,
           "assists": 0
         }
@@ -1902,14 +1902,14 @@
       "rank": "15위",
       "wins": 0,
       "draws": 10,
-      "losses": 2,
-      "goalsFor": 13,
-      "goalsAgainst": 17,
+      "losses": 3,
+      "goalsFor": 15,
+      "goalsAgainst": 20,
       "points": 10,
-      "homeRecord": "0승 4무 2패",
+      "homeRecord": "0승 4무 3패",
       "awayRecord": "0승 6무 0패",
       "longestWinningRun": "0연승",
-      "longestWinlessRun": "12경기",
+      "longestWinlessRun": "13경기",
       "highestScoringMatch": "충북청주 FC 1-4 수원 FC"
     }
   ],
@@ -1950,7 +1950,7 @@
       "name": "조성훈",
       "position": "GK",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -1959,7 +1959,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 0,
           "assists": 0
         }
@@ -1978,7 +1978,7 @@
       "name": "조성빈",
       "position": "GK",
       "nationality": "Korea",
-      "appearances": 9,
+      "appearances": 10,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -1987,7 +1987,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 9,
+          "appearances": 10,
           "goals": 0,
           "assists": 0
         }
@@ -2005,7 +2005,7 @@
       "name": "조윤성",
       "position": "DF",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -2014,7 +2014,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 0,
           "assists": 0
         }
@@ -2033,7 +2033,7 @@
       "name": "박건우",
       "position": "DF",
       "nationality": "Korea",
-      "appearances": 11,
+      "appearances": 12,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -2042,7 +2042,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 11,
+          "appearances": 12,
           "goals": 0,
           "assists": 0
         }
@@ -2060,7 +2060,7 @@
       "name": "조주영",
       "position": "DF",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -2069,7 +2069,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 0,
           "assists": 0
         }
@@ -2118,18 +2118,18 @@
       "name": "반데이라",
       "position": "DF",
       "nationality": "Portugal",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 0,
-      "assists": 1,
+      "assists": 2,
       "cleanSheets": 0,
-      "yellowCards": 2,
+      "yellowCards": 3,
       "redCards": 0,
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 0,
-          "assists": 1
+          "assists": 2
         }
       ],
       "previousClubs": [],
@@ -2142,7 +2142,7 @@
       "name": "강의빈",
       "position": "DF",
       "nationality": "Korea",
-      "appearances": 7,
+      "appearances": 8,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -2151,7 +2151,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 7,
+          "appearances": 8,
           "goals": 0,
           "assists": 0
         }
@@ -2170,7 +2170,7 @@
       "name": "이강한",
       "position": "DF",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -2179,7 +2179,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 0,
           "assists": 0
         }
@@ -2197,7 +2197,7 @@
       "name": "이창훈",
       "position": "DF",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -2206,7 +2206,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 0,
           "assists": 0
         }
@@ -2226,7 +2226,7 @@
       "name": "김선민",
       "position": "MF",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 1,
       "assists": 1,
       "cleanSheets": 0,
@@ -2235,7 +2235,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 1,
           "assists": 1
         }
@@ -2259,7 +2259,7 @@
       "name": "웰치",
       "position": "MF",
       "nationality": "United Kingdom",
-      "appearances": 7,
+      "appearances": 8,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -2268,7 +2268,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 7,
+          "appearances": 8,
           "goals": 0,
           "assists": 0
         }
@@ -2283,7 +2283,7 @@
       "name": "허승찬",
       "position": "MF",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 1,
       "assists": 1,
       "cleanSheets": 0,
@@ -2292,7 +2292,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 1,
           "assists": 1
         }
@@ -2334,7 +2334,7 @@
       "name": "정진우",
       "position": "MF",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -2343,7 +2343,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 0,
           "assists": 0
         }
@@ -2382,7 +2382,7 @@
       "name": "이라클리",
       "position": "FW",
       "nationality": "Georgia",
-      "appearances": 9,
+      "appearances": 10,
       "goals": 1,
       "assists": 1,
       "cleanSheets": 0,
@@ -2391,7 +2391,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 9,
+          "appearances": 10,
           "goals": 1,
           "assists": 1
         }
@@ -2430,8 +2430,8 @@
       "name": "가르시아",
       "position": "FW",
       "nationality": "Colombia",
-      "appearances": 12,
-      "goals": 4,
+      "appearances": 13,
+      "goals": 5,
       "assists": 0,
       "cleanSheets": 0,
       "yellowCards": 0,
@@ -2439,8 +2439,8 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
-          "goals": 4,
+          "appearances": 13,
+          "goals": 5,
           "assists": 0
         }
       ],
@@ -2480,18 +2480,18 @@
       "name": "서재원",
       "position": "FW",
       "nationality": "Korea",
-      "appearances": 9,
+      "appearances": 10,
       "goals": 0,
-      "assists": 0,
+      "assists": 1,
       "cleanSheets": 0,
       "yellowCards": 0,
       "redCards": 0,
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 9,
+          "appearances": 10,
           "goals": 0,
-          "assists": 0
+          "assists": 1
         }
       ],
       "previousClubs": [
@@ -2507,7 +2507,7 @@
       "name": "송창석",
       "position": "FW",
       "nationality": "Korea",
-      "appearances": 9,
+      "appearances": 10,
       "goals": 1,
       "assists": 0,
       "cleanSheets": 0,
@@ -2516,7 +2516,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 9,
+          "appearances": 10,
           "goals": 1,
           "assists": 0
         }
@@ -2561,7 +2561,7 @@
       "name": "이윤환",
       "position": "FW",
       "nationality": "Korea",
-      "appearances": 1,
+      "appearances": 2,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -2570,7 +2570,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 1,
+          "appearances": 2,
           "goals": 0,
           "assists": 0
         }
@@ -2585,7 +2585,7 @@
       "name": "이동진",
       "position": "FW",
       "nationality": "Korea",
-      "appearances": 1,
+      "appearances": 2,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -2594,7 +2594,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 1,
+          "appearances": 2,
           "goals": 0,
           "assists": 0
         }
@@ -2611,7 +2611,7 @@
       "name": "홍석준",
       "position": "FW",
       "nationality": "Korea",
-      "appearances": 12,
+      "appearances": 13,
       "goals": 0,
       "assists": 0,
       "cleanSheets": 0,
@@ -2620,7 +2620,7 @@
       "seasonRecords": [
         {
           "season": "2026",
-          "appearances": 12,
+          "appearances": 13,
           "goals": 0,
           "assists": 0
         }
@@ -2725,11 +2725,18 @@
       "round": "12R",
       "date": "2026-05-16",
       "rank": 15
+    },
+    {
+      "seasonId": "2026",
+      "matchId": "2026-kleague-99",
+      "round": "13R",
+      "date": "2026-05-23",
+      "rank": 15
     }
   ],
   "meta": {
     "season": "2026",
     "source": "K League automatic sync",
-    "updatedAt": "2026-05-23T12:03:40.173Z"
+    "updatedAt": "2026-05-23T14:10:51.005Z"
   }
 }
