@@ -1713,30 +1713,6 @@
       "nextClubs": []
     },
     {
-      "id": "2026-kleague-player-20260191",
-      "seasonId": "2026",
-      "number": "7",
-      "name": "이라클리",
-      "position": "FW",
-      "nationality": "Georgia",
-      "appearances": 11,
-      "goals": 1,
-      "assists": 1,
-      "cleanSheets": 0,
-      "yellowCards": 0,
-      "redCards": 0,
-      "seasonRecords": [
-        {
-          "season": "2026",
-          "appearances": 11,
-          "goals": 1,
-          "assists": 1
-        }
-      ],
-      "previousClubs": [],
-      "nextClubs": []
-    },
-    {
       "id": "2026-kleague-player-20260192",
       "seasonId": "2026",
       "number": "9",
@@ -1892,6 +1868,30 @@
       "nextClubs": []
     },
     {
+      "id": "2026-kleague-player-20260191",
+      "seasonId": "2026",
+      "number": "27",
+      "name": "이라클리",
+      "position": "FW",
+      "nationality": "Georgia",
+      "appearances": 11,
+      "goals": 1,
+      "assists": 1,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 11,
+          "goals": 1,
+          "assists": 1
+        }
+      ],
+      "previousClubs": [],
+      "nextClubs": []
+    },
+    {
       "id": "2026-kleague-player-20260196",
       "seasonId": "2026",
       "number": "37",
@@ -1991,13 +1991,13 @@
       "2026-kleague-player-20240149",
       "2026-kleague-player-20230018",
       "2026-kleague-player-20260197",
-      "2026-kleague-player-20260191",
       "2026-kleague-player-20260192",
       "2026-kleague-player-20260194",
       "2026-kleague-player-20230162",
       "2026-kleague-player-20220151",
       "2026-kleague-player-20220102",
       "2026-kleague-player-20250211",
+      "2026-kleague-player-20260191",
       "2026-kleague-player-20260196",
       "2026-kleague-player-20230065",
       "2026-kleague-player-20250327"
@@ -2586,30 +2586,6 @@
       "nextClubs": []
     },
     {
-      "id": "2026-kleague-player-20260191",
-      "seasonId": "2026",
-      "number": "7",
-      "name": "이라클리",
-      "position": "FW",
-      "nationality": "Georgia",
-      "appearances": 11,
-      "goals": 1,
-      "assists": 1,
-      "cleanSheets": 0,
-      "yellowCards": 0,
-      "redCards": 0,
-      "seasonRecords": [
-        {
-          "season": "2026",
-          "appearances": 11,
-          "goals": 1,
-          "assists": 1
-        }
-      ],
-      "previousClubs": [],
-      "nextClubs": []
-    },
-    {
       "id": "2026-kleague-player-20260192",
       "seasonId": "2026",
       "number": "9",
@@ -2762,6 +2738,30 @@
       "previousClubs": [
         "충북청주"
       ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20260191",
+      "seasonId": "2026",
+      "number": "27",
+      "name": "이라클리",
+      "position": "FW",
+      "nationality": "Georgia",
+      "appearances": 11,
+      "goals": 1,
+      "assists": 1,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 11,
+          "goals": 1,
+          "assists": 1
+        }
+      ],
+      "previousClubs": [],
       "nextClubs": []
     },
     {
@@ -2961,6 +2961,6 @@
   "meta": {
     "season": "2026",
     "source": "K League automatic sync",
-    "updatedAt": "2026-07-09T17:02:56.454Z"
+    "updatedAt": "2026-07-10T07:43:07.488Z"
   }
 }
