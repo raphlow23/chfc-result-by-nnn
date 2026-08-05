@@ -704,7 +704,7 @@
         "roundId": "21"
       },
       "date": "2026-08-07",
-      "time": "19:30",
+      "time": "20:00",
       "competition": "하나은행 K리그2 2026",
       "competitionType": "league",
       "round": "21R",
@@ -3152,6 +3152,6 @@
   "meta": {
     "season": "2026",
     "source": "K League automatic sync",
-    "updatedAt": "2026-08-05T06:34:19.341Z"
+    "updatedAt": "2026-08-05T09:40:49.902Z"
   }
 }
