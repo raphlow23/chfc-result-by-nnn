@@ -2114,7 +2114,7 @@
   "standings": [
     {
       "seasonId": "2026",
-      "rank": "12위",
+      "rank": "13위",
       "wins": 3,
       "draws": 14,
       "losses": 6,
@@ -3223,12 +3223,12 @@
       "matchId": "2026-kleague-189",
       "round": "24R",
       "date": "2026-08-29",
-      "rank": 12
+      "rank": 13
     }
   ],
   "meta": {
     "season": "2026",
     "source": "K League automatic sync",
-    "updatedAt": "2026-08-30T09:51:58.138Z"
+    "updatedAt": "2026-08-30T14:45:35.486Z"
   }
 }
