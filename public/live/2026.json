@@ -1421,32 +1421,6 @@
       "nextClubs": []
     },
     {
-      "id": "2026-kleague-player-20240109",
-      "seasonId": "2026",
-      "number": "39",
-      "name": "임준영",
-      "position": "DF",
-      "nationality": "Korea",
-      "appearances": 5,
-      "goals": 0,
-      "assists": 0,
-      "cleanSheets": 0,
-      "yellowCards": 0,
-      "redCards": 0,
-      "seasonRecords": [
-        {
-          "season": "2026",
-          "appearances": 5,
-          "goals": 0,
-          "assists": 0
-        }
-      ],
-      "previousClubs": [
-        "충북청주"
-      ],
-      "nextClubs": []
-    },
-    {
       "id": "2026-kleague-player-20200111",
       "seasonId": "2026",
       "number": "41",
@@ -1497,6 +1471,32 @@
       ],
       "previousClubs": [
         "강원",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20240109",
+      "seasonId": "2026",
+      "number": "75",
+      "name": "임준영",
+      "position": "DF",
+      "nationality": "Korea",
+      "appearances": 5,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 5,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
         "충북청주"
       ],
       "nextClubs": []
@@ -2082,9 +2082,9 @@
       "2026-kleague-player-20160075",
       "2026-kleague-player-20090093",
       "2026-kleague-player-20260195",
-      "2026-kleague-player-20240109",
       "2026-kleague-player-20200111",
       "2026-kleague-player-20200080",
+      "2026-kleague-player-20240109",
       "2026-kleague-player-20180017",
       "2026-kleague-player-20140040",
       "2026-kleague-player-20260193",
@@ -2400,32 +2400,6 @@
       "nextClubs": []
     },
     {
-      "id": "2026-kleague-player-20240109",
-      "seasonId": "2026",
-      "number": "39",
-      "name": "임준영",
-      "position": "DF",
-      "nationality": "Korea",
-      "appearances": 5,
-      "goals": 0,
-      "assists": 0,
-      "cleanSheets": 0,
-      "yellowCards": 0,
-      "redCards": 0,
-      "seasonRecords": [
-        {
-          "season": "2026",
-          "appearances": 5,
-          "goals": 0,
-          "assists": 0
-        }
-      ],
-      "previousClubs": [
-        "충북청주"
-      ],
-      "nextClubs": []
-    },
-    {
       "id": "2026-kleague-player-20200111",
       "seasonId": "2026",
       "number": "41",
@@ -2476,6 +2450,32 @@
       ],
       "previousClubs": [
         "강원",
+        "충북청주"
+      ],
+      "nextClubs": []
+    },
+    {
+      "id": "2026-kleague-player-20240109",
+      "seasonId": "2026",
+      "number": "75",
+      "name": "임준영",
+      "position": "DF",
+      "nationality": "Korea",
+      "appearances": 5,
+      "goals": 0,
+      "assists": 0,
+      "cleanSheets": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "seasonRecords": [
+        {
+          "season": "2026",
+          "appearances": 5,
+          "goals": 0,
+          "assists": 0
+        }
+      ],
+      "previousClubs": [
         "충북청주"
       ],
       "nextClubs": []
@@ -3246,6 +3246,6 @@
   "meta": {
     "season": "2026",
     "source": "K League automatic sync",
-    "updatedAt": "2026-10-07T17:46:02.433Z"
+    "updatedAt": "2026-10-08T11:15:14.750Z"
   }
 }
